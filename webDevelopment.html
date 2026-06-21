@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <!-- favicon -->
+        <link rel="icon" type="image/png" href="img/favicon.png">
+
+        <title>CoxFuture Technologies</title>
+        <meta name="description"
+            content="Leading provider of scalable software and IT solutions for modern businesses">
+
+        <!-- Bootstrap CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Outfit:wght@100..900&display=swap"
+            rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="coxfuture.css">
+    </head>
+
+    <body>
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+            <div class="container-fluid mx-4">
+                <a class="navbar-brand" href="/coxfuture.html">
+                    <img src="img/logo.png" alt="CoxFuture Logo"
+                        class="logo img-fluid">
+                </a>
+                <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon">
+                        <i class="fas fa-bars"></i>
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/coxfuture.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about.html">About</a>
+                        </li>
+                        <li class="nav-item mega-dropdown dropdown">
+                            <a class="nav-link dropdown-toggle"
+                                href="/services.html"
+                                role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">Services</a>
+                            <div class="dropdown-menu mega-menu">
+                                <div class="mega-menu-inner">
+                                    <div class="mega-intro">
+                                        <h4>Services</h4>
+                                        <p>Core development services for modern
+                                            businesses.</p>
+                                    </div>
+                                    <div class="mega-links">
+                                        <a class="mega-link"
+                                            href="/services.html">
+                                            <i
+                                                class="fas fa-mobile-screen-button"></i>
+                                            <div>
+                                                <h5>Mobile App Development</h5>
+                                                <p>High-performance, scalable
+                                                    mobile applications.</p>
+                                            </div>
+                                        </a>
+                                        <a class="mega-link"
+                                            href="/webDevelopment.html">
+                                            <i class="fas fa-laptop"></i>
+                                            <div>
+                                                <h5>Top Web Development</h5>
+                                                <p>High-performance, scalable
+                                                    web applications.</p>
+                                            </div>
+                                        </a>
+                                        <a class="mega-link"
+                                            href="/software.html">
+                                            <i class="fas fa-user-tie"></i>
+                                            <div>
+                                                <h5>Software Development</h5>
+                                                <p>Software development
+                                                    solutions for business
+                                                    operations.</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"
+                                href="/projects.html">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#pricing">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+
+                        </li>
+                    </ul>
+
+                    <!-- Theme Toggle Button -->
+                    <div class="theme-changer">
+                        <button class="theme-toggle" id="themeToggle"
+                            aria-label="Toggle Theme">
+                            <i class="fas fa-moon moon-icon"></i>
+                            <i class="fas fa-sun sun-icon"></i>
+                        </button>
+
+                        <a class="btn btn-primary nav-cta"
+                            href="#contact">Get Started</a>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+
+        <!-- ============ PAGE HERO ============ -->
+        <section class="page-hero">
+            <div class="container">
+                <div class="breadcrumb-trail">
+                    <a href="/coxfuture.html">Home</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <a href="/services.html">Services</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>Web Development</span>
+                </div>
+                <span class="section-label">Top Web Development Company</span>
+                <h1 class="section-title">Websites Built to Be Used, Not Just
+                    Viewed</h1>
+                <p class="section-description">A business website isn't tested
+                    by how it looks in a screenshot. It's tested by how
+                    easily people use it — leads reach the right team, pages
+                    load cleanly, and updates never become a bottleneck.
+                    CoxFuture builds secure, responsive web platforms for
+                    businesses that need a site that actually works.</p>
+                <a href="#contact-cta" class="btn btn-primary btn-lg">
+                    <span>Get a Free Quote</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- ============ SOLUTIONS FOR BUSINESSES ============ -->
+        <section class="aboutWeb-section  section-padding">
+            <div class="container">
+                <div class="section-header text-center mb-4 scroll-reveal">
+                    <span class="section-label">Built Around Your Stage</span>
+                    <h2 class="section-title">Website Development Solutions for
+                        Businesses</h2>
+                    <div class="title-underline mx-auto"></div>
+                    <p class="section-description mx-auto">A website doesn't
+                        carry the same pressure at every stage. We shape each
+                        build around audience size, process load, and where
+                        the business is headed next.</p>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="service-card scroll-reveal">
+                            <div class="service-icon"><i
+                                    class="fas fa-seedling"></i></div>
+                            <h3>Startups</h3>
+                            <p>Clean, focused sites with clear messaging and
+                                fast launch readiness — with room for pilots,
+                                pricing shifts, and growth.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Fast launch
+                                    readiness</li>
+                                <li><i class="fas fa-check"></i> Technical room
+                                    for pilots</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="service-card featured scroll-reveal">
+                            <div class="featured-badge">Most Requested</div>
+                            <div class="service-icon"><i
+                                    class="fas fa-store"></i></div>
+                            <h3>SMEs</h3>
+                            <p>Service pages, enquiry paths, product
+                                sections, and content controls built for
+                                smoother daily operations.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> CRM & payment
+                                    links</li>
+                                <li><i class="fas fa-check"></i> Content &
+                                    catalog control</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="service-card scroll-reveal">
+                            <div class="service-icon"><i
+                                    class="fas fa-building-columns"></i></div>
+                            <h3>Enterprises</h3>
+                            <p>Controlled access, approval paths, reporting,
+                                and integrations — built with secure
+                                structure and long-term support.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Custom modules
+                                    & reporting</li>
+                                <li><i class="fas fa-check"></i> Long-term tech
+                                    support</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ PLATFORM EXPERTISE ============ -->
+        <section class="solutions-section section-padding">
+            <div class="container">
+                <div class="section-header text-center mb-5 scroll-reveal">
+                    <span class="section-label">Platform Expertise</span>
+                    <h2 class="section-title">Our Expertise in Website
+                        Development Platforms</h2>
+                    <div class="title-underline mx-auto"></div>
+                    <p class="section-description mx-auto">The right platform
+                        decides how easily a website can be managed after
+                        launch — we evaluate performance, security, and
+                        scalability before choosing the stack.</p>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="solution-card scroll-reveal">
+                            <div class="solution-icon"><i
+                                    class="fas fa-code"></i></div>
+                            <h4>PHP Development</h4>
+                            <p>Dynamic websites with secure logic and structured
+                                databases.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="solution-card scroll-reveal">
+                            <div class="solution-icon"><i
+                                    class="fab fa-wordpress"></i></div>
+                            <h4>WordPress</h4>
+                            <p>Easy content management, blogs, and SEO-friendly
+                                structures.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="solution-card scroll-reveal">
+                            <div class="solution-icon"><i
+                                    class="fab fa-shopify"></i></div>
+                            <h4>Shopify</h4>
+                            <p>Clean eCommerce stores with smooth checkout
+                                journeys.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="solution-card scroll-reveal">
+                            <div class="solution-icon"><i
+                                    class="fas fa-cart-shopping"></i></div>
+                            <h4>Magento</h4>
+                            <p>Advanced eCommerce for large catalogues and heavy
+                                operations.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="solution-card scroll-reveal">
+                            <div class="solution-icon"><i
+                                    class="fas fa-fire"></i></div>
+                            <h4>Laravel</h4>
+                            <p>Custom platforms, dashboards, and scalable
+                                systems.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="solution-card scroll-reveal">
+                            <div class="solution-icon"><i
+                                    class="fab fa-react"></i></div>
+                            <h4>React JS</h4>
+                            <p>Fast UI, dashboards, and dynamic single-page
+                                apps.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="solution-card scroll-reveal">
+                            <div class="solution-icon"><i
+                                    class="fab fa-node-js"></i></div>
+                            <h4>Node JS</h4>
+                            <p>Real-time backend systems, APIs, and fast server
+                                responses.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="solution-card scroll-reveal">
+                            <div class="solution-icon"><i
+                                    class="fab fa-python"></i></div>
+                            <h4>Python</h4>
+                            <p>Automation, analytics, and data-driven
+                                platforms.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ PROCESS ============ -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="section-header text-center scroll-reveal">
+                    <span class="section-label">How We Work</span>
+                    <h2 class="section-title">Our Website Development
+                        Process</h2>
+                    <div class="title-underline mx-auto"></div>
+                    <p class="section-description mx-auto">A structured
+                        process that brings clarity, control, and quality to
+                        every project — from requirements to long-term
+                        support.</p>
+                </div>
+
+                <div class="process-strip">
+                    <div class="process-stage scroll-reveal">
+                        <div class="stage-num">01</div>
+                        <h5>Requirements</h5>
+                        <p>Define business model and goals</p>
+                    </div>
+                    <div class="process-stage scroll-reveal">
+                        <div class="stage-num">02</div>
+                        <h5>Planning</h5>
+                        <p>Wireframes and product structure</p>
+                    </div>
+                    <div class="process-stage scroll-reveal">
+                        <div class="stage-num">03</div>
+                        <h5>Development</h5>
+                        <p>Build app and backend system</p>
+                    </div>
+                    <div class="process-stage scroll-reveal">
+                        <div class="stage-num">04</div>
+                        <h5>Integration</h5>
+                        <p>Payments and APIs setup</p>
+                    </div>
+                    <div class="process-stage scroll-reveal">
+                        <div class="stage-num">05</div>
+                        <h5>Testing</h5>
+                        <p>Quality and performance check</p>
+                    </div>
+                    <div class="process-stage scroll-reveal">
+                        <div class="stage-num">06</div>
+                        <h5>Launch</h5>
+                        <p>Deploy and go live</p>
+                    </div>
+                    <div class="process-stage scroll-reveal">
+                        <div class="stage-num">07</div>
+                        <h5>Support</h5>
+                        <p>Maintenance & optimization</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ TECHNOLOGIES ============ -->
+        <section class="aboutTech-section section-padding">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6">
+                        <div class="section-header">
+                            <span class="section-label">Our Stack</span>
+                            <h2 class="section-title">Latest Technologies We Use
+                                for Web Development</h2>
+                            <div class="title-underline"></div>
+                        </div>
+                        <p class="section-description">As a modern web design
+                            and development agency, we use reliable
+                            technologies that support speed, scalability,
+                            security, and user experience — chosen based on
+                            project requirements, not habit.</p>
+
+                        <div class="tag-pills">
+                            <span class="tag-pill">HTML5</span>
+                            <span class="tag-pill">CSS3</span>
+                            <span class="tag-pill">JavaScript</span>
+                            <span class="tag-pill">React JS</span>
+                            <span class="tag-pill">Node JS</span>
+                            <span class="tag-pill">PHP</span>
+                            <span class="tag-pill">Laravel</span>
+                            <span class="tag-pill">Python</span>
+                            <span class="tag-pill">WordPress</span>
+                            <span class="tag-pill">Shopify</span>
+                            <span class="tag-pill">Magento</span>
+                            <span class="tag-pill">MySQL</span>
+                            <span class="tag-pill">MongoDB</span>
+                            <span class="tag-pill">REST APIs</span>
+                            <span class="tag-pill">Cloud Hosting</span>
+                        </div>
+
+                        <a href="#contact-cta" class="btn btn-primary btn-lg">
+                            <span>Discuss Your Stack</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="about-image">
+                            <div class="glass-card">
+                                <img
+                                    src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop"
+                                    alt="Web development technologies"
+                                    class="img-fluid rounded">
+                                <div class="about-badge">
+                                    <div class="badge-icon">
+                                        <i class="fas fa-code-branch"></i>
+                                    </div>
+                                    <div class="badge-content">
+                                        <h3>15+</h3>
+                                        <p>Technologies & Frameworks</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ CTA BANNER ============ -->
+        <section class=" aboutTech-section section-padding" id="contact-cta">
+            <div class="container">
+                <div class="cta-banner">
+                    <div>
+                        <h2>Ready to Build the Next Big Thing?</h2>
+                        <p>Join 130+ clients who scaled their business with
+                            CoxFuture.</p>
+                    </div>
+                    <a href="/contact.html" class="btn btn-primary btn-lg">
+                        <span>Let's Talk Strategy</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ WHY CHOOSE US ============ -->
+        <section class="about-section section-padding">
+            <div class="container">
+                <div class="section-header text-center mb-4 scroll-reveal">
+                    <span class="section-label">Why Choose Us</span>
+                    <h2 class="section-title">Why CoxFuture Is a Top Web
+                        Development Agency</h2>
+                    <div class="title-underline mx-auto"></div>
+                    <p class="section-description mx-auto">A website must do
+                        more than look polished — it must load fast, guide
+                        users clearly, and stay easy to manage after launch.</p>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-box p-3">
+                        <div class="feature-icon"><i
+                                class="fas fa-puzzle-piece"></i></div>
+                        <div class="feature-content">
+                            <h4>Custom Solutions</h4>
+                            <p>Built around your audience, operations, and
+                                future plans — not generic templates.</p>
+                        </div>
+                    </div>
+                    <div class="feature-box p-3">
+                        <div class="feature-icon"><i
+                                class="fas fa-magnifying-glass"></i></div>
+                        <div class="feature-content">
+                            <h4>SEO-Friendly Development</h4>
+                            <p>Clean code, logical structure, and crawl-friendly
+                                architecture.</p>
+                        </div>
+                    </div>
+                    <div class="feature-box p-3">
+                        <div class="feature-icon"><i
+                                class="fas fa-mobile-screen"></i></div>
+                        <div class="feature-content">
+                            <h4>Mobile-First Design</h4>
+                            <p>Smooth browsing and consistent performance across
+                                every screen.</p>
+                        </div>
+                    </div>
+                    <div class="feature-box p-3">
+                        <div class="feature-icon"><i
+                                class="fas fa-user-gear"></i></div>
+                        <div class="feature-content">
+                            <h4>Experienced Developers</h4>
+                            <p>Practical experience across industries,
+                                platforms, and technologies.</p>
+                        </div>
+                    </div>
+                    <div class="feature-box p-3">
+                        <div class="feature-icon"><i
+                                class="fas fa-gauge-high"></i></div>
+                        <div class="feature-content">
+                            <h4>Performance Focused</h4>
+                            <p>Optimised speed, code, and server response for
+                                real traffic.</p>
+                        </div>
+                    </div>
+                    <div class="feature-box p-3">
+                        <div class="feature-icon"><i
+                                class="fas fa-headset"></i></div>
+                        <div class="feature-content">
+                            <h4>Ongoing Support</h4>
+                            <p>Maintenance, updates, and security checks after
+                                launch.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ HIRE DEVELOPERS ============ -->
+        <section class="aboutTech-section section-padding">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6">
+                        <div class="section-header">
+                            <span class="section-label">Flexible
+                                Engagement</span>
+                            <h2 class="section-title">Hire Dedicated Web
+                                Developers</h2>
+                            <div class="title-underline"></div>
+                        </div>
+                        <p class="section-description">Build, upgrade, or
+                            maintain your business website with professional
+                            technical support. We offer flexible hiring
+                            models based on project scope, timeline, and
+                            skill requirements — short-term task help or
+                            long-term development, with structured
+                            communication and accountability.</p>
+
+                        <ul class="checklist">
+                            <li><i class="fas fa-check-circle"></i> Custom web
+                                apps</li>
+                            <li><i class="fas fa-check-circle"></i> eCommerce
+                                platforms</li>
+                            <li><i class="fas fa-check-circle"></i> Frontend &
+                                backend development</li>
+                            <li><i class="fas fa-check-circle"></i> CMS & API
+                                integration</li>
+                            <li><i class="fas fa-check-circle"></i> Performance
+                                tuning & ongoing maintenance</li>
+                        </ul>
+
+                        <a href="/contact.html" class="btn btn-primary btn-lg">
+                            <span>Hire a Developer</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="about-image">
+                            <div class="glass-card">
+                                <img
+                                    src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=800&auto=format&fit=crop"
+                                    alt="Hire dedicated web developers"
+                                    class="img-fluid rounded">
+                                <div class="about-badge">
+                                    <div class="badge-icon">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                    <div class="badge-content">
+                                        <h3>50+</h3>
+                                        <p>Developers On Bench</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container-fluid px-5">
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer-widget">
+                            <a class="navbar-brand" href="/coxfuture.html">
+                                <img src="img/logo.png" alt="CoxFuture Logo"
+                                    class="logo img-fluid">
+                            </a>
+                            <p class="footer-description">Building tomorrow's
+                                technology today. We empower businesses with
+                                scalable, innovative software solutions.</p>
+                            <div class="footer-social">
+                                <a href="#"><i
+                                        class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i
+                                        class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6">
+                        <div class="footer-widget">
+                            <h4>Quick Links</h4>
+                            <ul class="footer-links">
+                                <li><a href="/coxfuture.html">Home</a></li>
+                                <li><a href="/about.html">About Us</a></li>
+                                <li><a href="/services.html">Services</a></li>
+                                <li><a href="/projects.html">Projects</a></li>
+                                <li><a href="/team.html">Team</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget">
+                            <h4>Services</h4>
+                            <ul class="footer-links">
+                                <li><a href="/services.html">Software
+                                        Development</a></li>
+                                <li><a href="/services.html">Cloud
+                                        Solutions</a></li>
+                                <li><a href="/services.html">AI & ML</a></li>
+                                <li><a
+                                        href="/mobile-app-development-company-in-delhi.html">Mobile
+                                        Apps</a></li>
+                                <li><a
+                                        href="/services.html">Cybersecurity</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget">
+                            <h4>Newsletter</h4>
+                            <p>Subscribe for updates and tech insights</p>
+                            <form class="newsletter-form">
+                                <div class="input-group">
+                                    <input type="email" class="form-control"
+                                        name="email" autocomplete="email"
+                                        placeholder="Your email">
+                                    <button type="submit"
+                                        class="btn btn-primary">
+                                        <i class="fas fa-paper-plane"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <hr>
+                <div class="footer-bottom">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <p class="copyright">© 2026 CoxFuture. All rights
+                                reserved.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="footer-bottom-links">
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms of Service</a></li>
+                                <li><a href="#">Cookie Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Scroll to Top Button -->
+        <button class="scroll-to-top" id="scrollTopBtn">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+
+        <!-- Bootstrap JS -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Custom JS -->
+        <script src="coxfuture.js"></script>
+    </body>
+</html>
