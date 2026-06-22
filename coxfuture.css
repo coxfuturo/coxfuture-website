@@ -2433,6 +2433,485 @@ img {
         margin: 0;
     }
 
+        /* ── Hero ── */
+        .re-hero {
+            position: relative;
+            min-height: 80vh;
+            background: url('https://images.openai.com/static-rsc-4/wOruUw0ANXDbv3ui2kwVBrk7XyhW152rIYqKAFobO4IXlgiT5lGCC-as3HEA6S0p0Y30zVhTBQSDqSRQsbt6EtJI3U_5umPrLXBcSCBGHDiil6ZlNRxYUTYc6et9a0yv-3ekZZBmc59XGK5wNXd7-ExrUhy5XeT01lGK0FX1FgV1TmMyvrj6__EMCiDUbCut?purpose=fullsize') no-repeat center / cover;
+            background-color: var(--bg-dark);
+            display: flex;
+            align-items: center;
+            padding: 80px 0 60px;
+            overflow: hidden;
+        }
+ 
+        .re-hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(10, 8, 30, 0.92) 0%, rgba(10, 8, 30, 0.7) 55%, rgba(10, 8, 30, 0.25) 100%);
+            z-index: 1;
+        }
+ 
+        .re-hero .hero-inner {
+            position: relative;
+            z-index: 2;
+        }
+ 
+        .re-hero h1 {
+            font-size: clamp(24px, 4vw, 50px);
+            line-height: 1.2;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+ 
+        .re-hero p {
+            font-size: clamp(13px, 1.7vw, 16px);
+            color: #cbd5e1;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+ 
+        /* ── Section headings ── */
+        .re-section-label {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 3px;
+            margin-bottom: 12px;
+        }
+ 
+        /* ── Solution Cards ── */
+        .re-card {
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-normal);
+            height: 100%;
+            background: var(--bg-primary);
+        }
+ 
+        .re-card .card-body { padding: 24px; }
+ 
+        .re-card .card-title {
+            color: var(--text-primary);
+            font-weight: 700;
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
+ 
+        .re-card .card-text {
+            color: var(--text-secondary);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+ 
+        .re-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--secondary-color);
+        }
+ 
+        /* ── Feature Cards (dark section) ── */
+        .re-dark-section {
+            position: relative;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.96) 30%, rgba(65, 30, 121, 0.85) 100%),
+                url('https://img.freepik.com/free-vector/wavey-background-4_78370-354.jpg?w=740&q=80') center / cover;
+            padding: 70px 0;
+        }
+ 
+        .re-feature-card {
+            background: rgba(30, 41, 59, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            height: 100%;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+ 
+        .re-feature-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(65, 30, 121, 0.5);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+ 
+        .re-img-frame {
+            position: relative;
+            height: 150px;
+            overflow: hidden;
+        }
+ 
+        .re-img-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+            transition: 0.5s;
+        }
+ 
+        .re-feature-card:hover .re-img-frame img {
+            transform: scale(1.08);
+            opacity: 1;
+        }
+ 
+        .re-icon-float {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 40px;
+            height: 40px;
+            background: var(--secondary-color);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            font-size: 17px;
+            box-shadow: 0 4px 12px rgba(65, 30, 121, 0.5);
+        }
+ 
+        .re-card-body-text { padding: 16px; }
+        .re-card-body-text h6 { color: #fff; font-weight: 700; font-size: 15px; margin-bottom: 8px; }
+        .re-card-body-text p { color: #94a3b8; font-size: 13px; line-height: 1.6; margin: 0; }
+ 
+        /* ── Side Cards ── */
+        .re-side-card {
+            background: var(--bg-primary);
+            padding: 20px;
+            border-radius: 14px;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-normal);
+        }
+ 
+        .re-side-card:hover {
+            border-color: var(--secondary-color);
+            transform: translateX(4px);
+            box-shadow: var(--shadow-md);
+        }
+ 
+        .re-side-icon {
+            width: 50px;
+            height: 50px;
+            min-width: 50px;
+            background: var(--gradient-primary);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            font-size: 22px;
+        }
+ 
+        .re-side-text h5 { color: var(--text-primary); font-weight: 700; font-size: 15px; margin-bottom: 6px; }
+        .re-side-text p  { color: var(--text-secondary); font-size: 13px; margin: 0; line-height: 1.6; }
+ 
+        /* ── Health Cards (used in dark section) ── */
+        .re-health-card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            padding: 18px;
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            height: 100%;
+            transition: var(--transition-normal);
+        }
+ 
+        .re-health-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.12);
+        }
+ 
+        .re-health-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+ 
+        .re-health-icon {
+            width: 42px;
+            height: 42px;
+            min-width: 42px;
+            background: var(--gradient-primary);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            font-size: 17px;
+        }
+ 
+        .re-health-header h5 { margin: 0; font-size: 15px; font-weight: 600; color: #fff; }
+        .re-health-card p    { font-size: 13px; color: rgba(255, 255, 255, 0.8); margin: 0; line-height: 1.6; }
+ 
+        /* ── Feature boxes (Agent, Admin sections) ── */
+        .re-feat-box {
+            background: var(--bg-primary);
+            padding: 20px;
+            border-radius: 14px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+            height: 100%;
+            transition: var(--transition-normal);
+        }
+ 
+        .re-feat-box:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary-color);
+            box-shadow: var(--shadow-md);
+        }
+ 
+        .re-feat-box .top-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+ 
+        .re-feat-box .top-row .icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-primary);
+            color: #fff;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 17px;
+        }
+ 
+        .re-feat-box h6 { color: var(--text-primary); font-weight: 700; margin: 0; font-size: 14px; }
+        .re-feat-box p  { color: var(--text-secondary); font-size: 13px; margin: 0; line-height: 1.6; }
+ 
+        /* ── Tech Row Cards ── */
+        .re-tech-card {
+            display: flex;
+            align-items: flex-start;
+            padding: 18px;
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            transition: var(--transition-normal);
+            box-shadow: var(--shadow-sm);
+        }
+ 
+        .re-tech-card:hover {
+            border-color: var(--secondary-color);
+            transform: translateX(6px);
+        }
+ 
+        .re-tech-icon {
+            width: 50px;
+            height: 50px;
+            min-width: 50px;
+            background: var(--gradient-primary);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            font-size: 22px;
+            margin-right: 16px;
+        }
+ 
+        .re-tech-content h6 { color: var(--text-primary); font-weight: 700; margin-bottom: 4px; font-size: 15px; }
+        .re-tech-content p  { color: var(--text-secondary); font-size: 13px; line-height: 1.5; margin: 0; }
+ 
+        /* ── AI Cards ── */
+        .re-ai-card {
+            background: var(--bg-primary);
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-normal);
+            height: 100%;
+        }
+ 
+        .re-ai-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+        .re-ai-card img   { width: 100%; height: 150px; object-fit: cover; }
+ 
+        .re-ai-body { padding: 16px; }
+ 
+        .re-ai-icon {
+            width: 38px;
+            height: 38px;
+            background: var(--gradient-primary);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+ 
+        .re-ai-body h5 { font-size: 15px; font-weight: 700; margin-bottom: 6px; color: var(--text-primary); }
+        .re-ai-body p  { font-size: 13px; color: var(--text-secondary); margin: 0; }
+ 
+        /* ── Process Steps ── */
+        .re-process-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+ 
+        .re-process-steps::before {
+            content: "";
+            position: absolute;
+            top: 35px;
+            left: 5%;
+            width: 90%;
+            height: 2px;
+            background: var(--border-color);
+            z-index: 0;
+        }
+ 
+        .re-process-step {
+            flex: 1;
+            min-width: 120px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+ 
+        .re-circle {
+            width: 70px;
+            height: 70px;
+            border: 2px solid var(--secondary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 12px;
+            color: var(--secondary-color);
+            font-size: 22px;
+            background: var(--bg-primary);
+            transition: var(--transition-normal);
+        }
+ 
+        .re-circle:hover,
+        .re-process-step:hover .re-circle {
+            background: var(--gradient-primary);
+            color: #fff;
+            border-color: transparent;
+        }
+ 
+        .re-process-step h6 { font-size: 13px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+        .re-process-step p  { font-size: 11px; color: var(--text-secondary); margin: 0; }
+ 
+        /* ── FAQ ── */
+        .re-faq .accordion-item {
+            border: none;
+            margin-bottom: 10px;
+            background: var(--bg-primary);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+ 
+        .re-faq .accordion-button {
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+        }
+ 
+        .re-faq .accordion-button:not(.collapsed) {
+            color: var(--secondary-color);
+            background: var(--bg-secondary);
+            box-shadow: none;
+        }
+ 
+        .re-faq .accordion-button::after {
+            filter: none;
+        }
+ 
+        .re-faq .accordion-body {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+ 
+        .re-faq .accordion-button:focus { box-shadow: none; }
+ 
+        .re-faq-img {
+            max-width: 100%;
+            height: 420px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+        }
+ 
+        /* ── CTA Banner override ── */
+        .re-cta {
+            background: var(--gradient-primary);
+            border-radius: 20px;
+            padding: 50px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+ 
+        .re-cta h2 { color: #fff; font-size: clamp(20px, 3vw, 30px); margin: 0 0 8px; }
+        .re-cta p  { color: rgba(255,255,255,0.85); margin: 0; }
+ 
+        /* ── Agent / plain cards ── */
+        .re-agent-card {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+            height: 100%;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-normal);
+        }
+ 
+        .re-agent-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--secondary-color);
+            box-shadow: var(--shadow-md);
+        }
+ 
+        .re-agent-card h5 { color: var(--text-primary); font-weight: 700; font-size: 15px; margin-bottom: 10px; }
+        .re-agent-card p  { color: var(--text-secondary); font-size: 13px; line-height: 1.7; margin: 0; }
+ 
+        /* ── Responsive ── */
+        @media (max-width: 991px) {
+            .re-process-steps::before { display: none; }
+            .re-process-step { min-width: calc(33.33% - 14px); flex: 0 0 calc(33.33% - 14px); }
+            .re-faq-img { height: 280px; }
+            .re-cta { flex-direction: column; text-align: center; }
+        }
+ 
+        @media (max-width: 767px) {
+            .re-process-step { min-width: calc(50% - 10px); flex: 0 0 calc(50% - 10px); }
+            .re-img-frame { height: 130px; }
+            .re-faq-img { height: 230px; }
+            .re-hero { min-height: auto; padding: 80px 0 40px; }
+        }
+ 
+        @media (max-width: 480px) {
+            .re-hero h1 { font-size: 22px; }
+        }
+
+
+
+
+
     /* ==========================================
    Team Section
    ========================================== */
