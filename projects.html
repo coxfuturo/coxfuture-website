@@ -55,9 +55,51 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/about.html">About</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link"
-                                href="/services.html">Services</a>
+                        <li class="nav-item mega-dropdown dropdown">
+                            <a class="nav-link dropdown-toggle"
+                                href="/services.html"
+                                role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">Services</a>
+                            <div class="dropdown-menu mega-menu">
+                                <div class="mega-menu-inner">
+                                    <div class="mega-intro">
+                                        <h4>Services</h4>
+                                        <p>Core development services for modern
+                                            businesses.</p>
+                                    </div>
+                                    <div class="mega-links">
+                                        <a class="mega-link"
+                                            href="/services.html">
+                                            <i
+                                                class="fas fa-mobile-screen-button"></i>
+                                            <div>
+                                                <h5>Mobile App Development</h5>
+                                                <p>High-performance, scalable
+                                                    mobile applications.</p>
+                                            </div>
+                                        </a>
+                                        <a class="mega-link"
+                                            href="/webDevelopment.html">
+                                            <i class="fas fa-laptop"></i>
+                                            <div>
+                                                <h5>Top Web Development</h5>
+                                                <p>High-performance, scalable
+                                                    web applications.</p>
+                                            </div>
+                                        </a>
+                                        <a class="mega-link"
+                                            href="/software.html">
+                                            <i class="fas fa-user-tie"></i>
+                                            <div>
+                                                <h5>Software Development</h5>
+                                                <p>Software development
+                                                    solutions for business
+                                                    operations.</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active"
@@ -76,15 +118,15 @@
 
                     <!-- Theme Toggle Button -->
                     <div class="theme-changer">
-                            <button class="theme-toggle" id="themeToggle"
-                                aria-label="Toggle Theme">
-                                <i class="fas fa-moon moon-icon"></i>
-                                <i class="fas fa-sun sun-icon"></i>
-                            </button>
-                            
-                            <a class="btn btn-primary nav-cta"
-                                href="#contact">Get Started</a>
-                        </div>
+                        <button class="theme-toggle" id="themeToggle"
+                            aria-label="Toggle Theme">
+                            <i class="fas fa-moon moon-icon"></i>
+                            <i class="fas fa-sun sun-icon"></i>
+                        </button>
+
+                        <a class="btn btn-primary nav-cta"
+                            href="#contact">Get Started</a>
+                    </div>
 
                 </div>
             </div>
@@ -102,7 +144,7 @@
                         custom software solutions that help businesses achieve
                         their goals faster.
                     </p>
-                    
+
                 </div>
                 <div class="container">
                     <div class="card project-info" style="width: 18rem;">
@@ -114,7 +156,8 @@
                                 of
                                 the
                                 card's content.</p>
-                                <a href="#" class="">Preview <span><i class="fa-solid fa-arrow-right"></i></span></a>
+                            <a href="#" class>Preview <span><i
+                                        class="fa-solid fa-arrow-right"></i></span></a>
                         </div>
                     </div>
                 </div>
@@ -123,29 +166,25 @@
 
         <!-- Footer -->
         <footer class="footer">
-            <div class="container">
+            <div class="container-fluid px-5">
                 <div class="row g-4">
                     <div class="col-lg-4 col-md-6">
                         <div class="footer-widget">
-                            <a class="navbar-brand" href="/coxfuture.html">
+                            <a class="navbar-brand" href="#home">
                                 <img src="img/logo.png" alt="CoxFuture Logo"
                                     class="logo img-fluid">
                             </a>
-                            <p class="footer-description">Building
-                                tomorrow's
+                            <p class="footer-description">Building tomorrow's
                                 technology today. We empower businesses with
                                 scalable, innovative software solutions.</p>
                             <div class="footer-social">
                                 <a href="#"><i
                                         class="fab fa-facebook-f"></i></a>
-                                <a href="#"><i
-                                        class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
                                 <a href="#"><i
                                         class="fab fa-linkedin-in"></i></a>
-                                <a href="#"><i
-                                        class="fab fa-instagram"></i></a>
-                                <a href="#"><i
-                                        class="fab fa-github"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-github"></i></a>
                             </div>
                         </div>
                     </div>
@@ -169,12 +208,10 @@
                             <ul class="footer-links">
                                 <li><a href="#services">Software
                                         Development</a></li>
-                                <li><a href="#services">Cloud
-                                        Solutions</a></li>
+                                <li><a href="#services">Cloud Solutions</a></li>
                                 <li><a href="#services">AI & ML</a></li>
                                 <li><a href="#services">Mobile Apps</a></li>
-                                <li><a
-                                        href="#services">Cybersecurity</a></li>
+                                <li><a href="#services">Cybersecurity</a></li>
                             </ul>
                         </div>
                     </div>
@@ -186,6 +223,7 @@
                             <form class="newsletter-form">
                                 <div class="input-group">
                                     <input type="email" class="form-control"
+                                        name="email" autocomplete="email"
                                         placeholder="Your email">
                                     <button type="submit"
                                         class="btn btn-primary">
@@ -201,8 +239,7 @@
                 <div class="footer-bottom">
                     <div class="row align-items-center">
                         <div class="col-md-6">
-                            <p class="copyright">© 2026 CoxFuture. All
-                                rights
+                            <p class="copyright">© 2026 CoxFuture. All rights
                                 reserved.</p>
                         </div>
                         <div class="col-md-6">

@@ -25,7 +25,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Outfit:wght@100..900&display=swap"
             rel="stylesheet">
 
         <!-- Custom CSS -->
@@ -55,13 +55,55 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/about.html">About</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link"
-                                href="/services.html">Services</a>
+                        <li class="nav-item mega-dropdown dropdown">
+                            <a class="nav-link dropdown-toggle"
+                                href="/services.html"
+                                role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">Services</a>
+                            <div class="dropdown-menu mega-menu">
+                                <div class="mega-menu-inner">
+                                    <div class="mega-intro">
+                                        <h4>Services</h4>
+                                        <p>Core development services for modern
+                                            businesses.</p>
+                                    </div>
+                                    <div class="mega-links">
+                                        <a class="mega-link"
+                                            href="/services.html">
+                                            <i
+                                                class="fas fa-mobile-screen-button"></i>
+                                            <div>
+                                                <h5>Mobile App Development</h5>
+                                                <p>High-performance, scalable
+                                                    mobile applications.</p>
+                                            </div>
+                                        </a>
+                                        <a class="mega-link"
+                                            href="/webDevelopment.html">
+                                            <i class="fas fa-laptop"></i>
+                                            <div>
+                                                <h5>Top Web Development</h5>
+                                                <p>High-performance, scalable
+                                                    web applications.</p>
+                                            </div>
+                                        </a>
+                                        <a class="mega-link"
+                                            href="/software.html">
+                                            <i class="fas fa-user-tie"></i>
+                                            <div>
+                                                <h5>Software Development</h5>
+                                                <p>Software development
+                                                    solutions for business
+                                                    operations.</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link"
-                                href="/projects.html">Projects</a>
+                                href="/projects.html">Portfolio</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#pricing">Pricing</a>
@@ -92,13 +134,14 @@
         </nav>
 
         <!-- Contact Section -->
-        <section class="contact-section section-padding" id="contact">
+        <section class="contact-section section-padding " id="contact">
             <div class="container">
-                <div class="section-header text-center mb-5 scroll-reveal">
-                    <span class="section-label">Get In Touch</span>
+                <div class="section-header text-center scroll-reveal mt-5">
+                    <span class="section-label mt-3">Get In Touch</span>
                     <h2 class="section-title">Let's Build Something Great</h2>
                     <div class="title-underline mx-auto"></div>
-                    <p class="section-description mx-auto">Ready to transform your
+                    <p class="section-description mx-auto">Ready to transform
+                        your
                         business? Reach out to us</p>
                 </div>
 
@@ -149,8 +192,6 @@
 
                             <div class="social-links-large mt-4">
                                 <a href="#" class="social-link"><i
-                                        class="fab fa-facebook-f"></i></a>
-                                <a href="#" class="social-link"><i
                                         class="fab fa-twitter"></i></a>
                                 <a href="#" class="social-link"><i
                                         class="fab fa-linkedin-in"></i></a>
@@ -172,7 +213,7 @@
                                                 *</label>
                                             <input type="text"
                                                 class="form-control" id="name"
-                                                required>
+                                                autocomplete="name" required>
                                             <i class="fas fa-user"></i>
                                         </div>
                                     </div>
@@ -182,6 +223,7 @@
                                                 *</label>
                                             <input type="email"
                                                 class="form-control" id="email"
+                                                autocomplete="email"
                                                 required>
                                             <i class="fas fa-envelope"></i>
                                         </div>
@@ -191,7 +233,8 @@
                                             <label for="phone">Phone
                                                 Number</label>
                                             <input type="tel"
-                                                class="form-control" id="phone">
+                                                class="form-control" id="phone"
+                                                autocomplete="phone">
                                             <i class="fas fa-phone"></i>
                                         </div>
                                     </div>
@@ -245,19 +288,9 @@
             </div>
         </section>
 
-        <!-- Map Section -->
-        <section class="map-section">
-            <div class="map-container">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7004.159723676831!2d77.38259877528893!3d28.627368475667573!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cef1c4d9169ab%3A0xddb18b5e0fa53b44!2sTriangles%20Business%20Park!5e0!3m2!1sen!2sin!4v1781607029485!5m2!1sen!2sin"
-                    width="100%" height="450" style="border:0;" allowfullscreen
-                    loading="lazy"></iframe>
-            </div>
-        </section>
-
         <!-- Footer -->
         <footer class="footer">
-            <div class="container">
+            <div class="container-fluid px-5">
                 <div class="row g-4">
                     <div class="col-lg-4 col-md-6">
                         <div class="footer-widget">
@@ -314,6 +347,7 @@
                             <form class="newsletter-form">
                                 <div class="input-group">
                                     <input type="email" class="form-control"
+                                        name="email" autocomplete="email"
                                         placeholder="Your email">
                                     <button type="submit"
                                         class="btn btn-primary">

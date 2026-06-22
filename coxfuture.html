@@ -25,7 +25,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Outfit:wght@100..900&display=swap"
             rel="stylesheet">
 
         <!-- Custom CSS -->
@@ -37,7 +37,7 @@
         <!-- Navigation -->
         <header>
             <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
-                <div class="container-fluid mx-4">
+                <div class="container-fluid px-3">
                     <a class="navbar-brand" href="#home">
                         <img src="img/logo.png" alt="CoxFuture Logo"
                             class="logo img-fluid">
@@ -56,13 +56,60 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="/about.html">About</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link"
-                                    href="/services.html">Services</a>
+                            <li class="nav-item mega-dropdown dropdown">
+                                <a class="nav-link dropdown-toggle"
+                                    href="/services.html"
+                                    role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">Services</a>
+                                <div class="dropdown-menu mega-menu">
+                                    <div class="mega-menu-inner">
+                                        <div class="mega-intro">
+                                            <h4>Services</h4>
+                                            <p>Core development services for
+                                                modern
+                                                businesses.</p>
+                                        </div>
+                                        <div class="mega-links">
+                                            <a class="mega-link"
+                                                href="/services.html">
+                                                <i
+                                                    class="fas fa-mobile-screen-button"></i>
+                                                <div>
+                                                    <h5>Mobile App
+                                                        Development</h5>
+                                                    <p>High-performance,
+                                                        scalable
+                                                        mobile applications.</p>
+                                                </div>
+                                            </a>
+                                            <a class="mega-link"
+                                                href="/webDevelopment.html">
+                                                <i class="fas fa-laptop"></i>
+                                                <div>
+                                                    <h5>Top Web Development</h5>
+                                                    <p>High-performance,
+                                                        scalable
+                                                        web applications.</p>
+                                                </div>
+                                            </a>
+                                            <a class="mega-link"
+                                                href="/software.html">
+                                                <i class="fas fa-user-tie"></i>
+                                                <div>
+                                                    <h5>Software
+                                                        Development</h5>
+                                                    <p>Software development
+                                                        solutions for business
+                                                        operations.</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"
-                                    href="/projects.html">Projects</a>
+                                    href="/projects.html">Portfolio</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#pricing">Pricing</a>
@@ -174,11 +221,10 @@
         <!-- Services Section -->
         <section class="services-section section-padding" id="services">
             <div class="container">
-                <div class="section-header text-center mb-5 scroll-reveal">
+                <div class="section-header text-center scroll-reveal">
                     <span class="section-label">Our Services</span>
                     <h2 class="section-title">Comprehensive IT Solutions</h2>
-                    <div class="title-underline mx-auto"></div>
-                    <p class="section-description">End-to-end technology
+                    <p class="section-description mx-auto">End-to-end technology
                         services tailored to your business needs</p>
                 </div>
 
@@ -329,7 +375,7 @@
         <!-- planing and transform -->
         <section class="planing-section section-padding" id="planing">
             <div class="container">
-                <div class="section-header text-center mb-5 scroll-reveal">
+                <div class="section-header text-center scroll-reveal">
                     <span class="section-label">Our Development Process</span>
                     <h2 class="section-title">From Idea to Impact</h2>
                     <div class="title-underline mx-auto"></div>
@@ -411,7 +457,8 @@
                     <span class="section-label">Industry Solutions</span>
                     <h2 class="section-title">Tailored for Your Industry</h2>
                     <div class="title-underline mx-auto"></div>
-                    <p class="section-description">Specialized solutions for
+                    <p class="section-description mx-auto">Specialized solutions
+                        for
                         diverse business sectors</p>
                 </div>
 
@@ -499,7 +546,7 @@
         <!-- About Section -->
         <section class="about-section section-padding" id="about">
             <div class="container">
-                <div class="row align-items-center">
+                <div class="row">
                     <div class="col-lg-6 mb-5 mb-lg-0">
                         <div class="about-image">
                             <div class="glass-card">
@@ -520,7 +567,7 @@
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <div class="about-content scroll-reveal">
+                        <div class="about-content scroll-reveal mx-4">
                             <div class="section-header">
                                 <span class="section-label">About
                                     CoxFuture</span>
@@ -536,60 +583,59 @@
                                 with scalable, secure, and intelligent
                                 technology that drives growth.</p>
 
-                            <div class="features-grid">
-                                <div class="feature-box">
-                                    <div class="feature-icon">
-                                        <i class="fas fa-bullseye"></i>
-                                    </div>
-                                    <div class="feature-content">
-                                        <h4>Our Mission</h4>
-                                        <p>Deliver innovative solutions that
-                                            exceed expectations</p>
-                                    </div>
-                                </div>
-                                <div class="feature-box">
-                                    <div class="feature-icon">
-                                        <i class="fas fa-eye"></i>
-                                    </div>
-                                    <div class="feature-content">
-                                        <h4>Our Vision</h4>
-                                        <p>Lead the digital transformation
-                                            revolution globally</p>
-                                    </div>
-                                </div>
-                                <div class="feature-box">
-                                    <div class="feature-icon">
-                                        <i class="fas fa-heart"></i>
-                                    </div>
-                                    <div class="feature-content">
-                                        <h4>Our Values</h4>
-                                        <p>Innovation, integrity, and
-                                            customer-centricity</p>
-                                    </div>
-                                </div>
-                                <div class="feature-box">
-                                    <div class="feature-icon">
-                                        <i class="fas fa-users"></i>
-                                    </div>
-                                    <div class="feature-content">
-                                        <h4>Our Team</h4>
-                                        <p>50+ certified experts across
-                                            technologies</p>
-                                    </div>
-                                </div>
-                            </div>
-
                             <a href="#contact"
-                                class="btn btn-primary btn-lg mt-4">
+                                class="btn btn-primary btn-lg">
                                 <span>Partner With Us</span>
                                 <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
                     </div>
                 </div>
+
+                <div class="features-grid">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>Our Mission</h4>
+                            <p>Deliver innovative solutions that
+                                exceed expectations</p>
+                        </div>
+                    </div>
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>Our Vision</h4>
+                            <p>Lead the digital transformation
+                                revolution globally</p>
+                        </div>
+                    </div>
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>Our Values</h4>
+                            <p>Innovation, integrity, and
+                                customer-centricity</p>
+                        </div>
+                    </div>
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>Our Team</h4>
+                            <p>50+ certified experts across
+                                technologies</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
-
 
         <!-- Team Section -->
         <section class="team-section section-padding" id="team">
@@ -598,7 +644,8 @@
                     <span class="section-label">Our Team</span>
                     <h2 class="section-title">Meet The Experts</h2>
                     <div class="title-underline mx-auto"></div>
-                    <p class="section-description">Talented professionals
+                    <p class="section-description mx-auto">Talented
+                        professionals
                         driving innovation</p>
                 </div>
 
@@ -709,7 +756,8 @@
                     <span class="section-label">Client Reviews</span>
                     <h2 class="section-title">What Our Clients Say</h2>
                     <div class="title-underline mx-auto"></div>
-                    <p class="section-description mx-auto">Real feedback from real
+                    <p class="section-description mx-auto">Real feedback from
+                        real
                         clients</p>
                 </div>
 
@@ -721,9 +769,6 @@
                                 <div class="col-lg-8">
                                     <div
                                         class="testimonial-card-large scroll-reveal">
-                                        <div class="quote-icon">
-                                            <i class="fas fa-quote-left"></i>
-                                        </div>
                                         <p class="testimonial-text">"CoxFuture
                                             transformed our entire digital
                                             infrastructure. Their team's
@@ -757,9 +802,6 @@
                                 <div class="col-lg-8">
                                     <div
                                         class="testimonial-card-large scroll-reveal">
-                                        <div class="quote-icon">
-                                            <i class="fas fa-quote-left"></i>
-                                        </div>
                                         <p class="testimonial-text">"The custom
                                             e-commerce platform they built for
                                             us
@@ -794,9 +836,6 @@
                                 <div class="col-lg-8">
                                     <div
                                         class="testimonial-card-large scroll-reveal">
-                                        <div class="quote-icon">
-                                            <i class="fas fa-quote-left"></i>
-                                        </div>
                                         <p class="testimonial-text">"Working
                                             with CoxFuture on our AI-powered
                                             analytics
@@ -854,7 +893,7 @@
         <!-- Contact Section -->
         <section class="contact-section section-padding" id="contact">
             <div class="container">
-                <div class="section-header text-center mb-5 scroll-reveal">
+                <div class="section-header text-center scroll-reveal">
                     <span class="section-label">Get In Touch</span>
                     <h2 class="section-title">Let's Build Something Great</h2>
                     <div class="title-underline mx-auto"></div>
@@ -1003,17 +1042,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Map Section -->
-        <section class="map-section">
-            <div class="map-container">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7004.159723676831!2d77.38259877528893!3d28.627368475667573!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cef1c4d9169ab%3A0xddb18b5e0fa53b44!2sTriangles%20Business%20Park!5e0!3m2!1sen!2sin!4v1781607029485!5m2!1sen!2sin"
-                    width="100%" height="450" style="border:0;" allowfullscreen
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </section>
 
