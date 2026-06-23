@@ -2826,7 +2826,6 @@ img {
         font-size: 0.9rem;
         margin: 0;
     }
-
         /* ── Hero ── */
         .re-hero {
             position: relative;
@@ -3301,11 +3300,6 @@ img {
         @media (max-width: 480px) {
             .re-hero h1 { font-size: 22px; }
         }
-
-
-
-
-
     /* ==========================================
    eCommerce App Development Page
    ========================================== */
