@@ -511,6 +511,150 @@ img {
     filter: brightness(0) invert(1) drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
 }
 
+/* ===========================
+   INDUSTRIES MEGA MENU
+=========================== */
+
+.industries-menu {
+    position: static !important;
+}
+
+.industries-dropdown {
+    position: absolute;
+    top: calc(100% + 15px);
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    width: min(1150px, 92vw);
+    background: var(--bg-primary);
+    display: grid;
+    grid-template-columns: 280px repeat(4, 1fr);
+    gap: 30px;
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-xl);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+    z-index: 99999;
+}
+
+.industries-menu:hover .industries-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Left Card */
+.industries-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.industries-card h2 {
+    font-size: 1.5rem;
+    line-height: 1.25;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 12px;
+}
+
+.industries-card p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--text-muted);
+    margin-bottom: 0;
+}
+
+/* Right Columns */
+.industry-column h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--text-primary);
+}
+
+.industry-column a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: all var(--transition-fast);
+}
+
+.industry-column a:hover {
+    color: var(--secondary-color);
+    background: var(--bg-secondary);
+    transform: translateX(3px);
+}
+
+.industry-column i {
+    width: 16px;
+    color: var(--secondary-color);
+    font-size: 0.95rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 991.98px) {
+    .industries-dropdown {
+        position: static;
+        width: 100%;
+        max-width: none;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        display: none;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 15px;
+        box-shadow: none;
+        border: none;
+        background: transparent;
+    }
+    
+    .industries-menu:hover .industries-dropdown,
+    .industries-menu.show .industries-dropdown {
+        display: grid;
+        transform: none;
+    }
+    
+    .industries-card {
+        padding: 15px;
+        text-align: center;
+    }
+    
+    .industries-card h2 {
+        font-size: 1.25rem;
+    }
+    
+    .industry-column h4 {
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 5px;
+    }
+    
+    .industry-column a {
+        padding: 4px 0;
+        margin-bottom: 8px;
+    }
+}
+
+
+
 /* ==========================================
    Services Mega Dropdown (navbar)
    ========================================== */
@@ -518,27 +662,46 @@ img {
     position: relative;
 }
 
-.nav-link.dropdown-toggle::after {
-    vertical-align: 2px;
-    margin-left: 6px;
+.nav-link.dropdown-toggle {
+    display: inline-flex !important;
+    align-items: center !important;
+    white-space: nowrap !important;
+}
+
+.nav-link.dropdown-toggle::before {
+    content: '' !important;
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 0 !important;
+    height: 2px !important;
+    background: var(--gradient-primary) !important;
+    transition: width var(--transition-normal) !important;
+}
+
+.nav-link.dropdown-toggle:hover::before,
+.nav-link.dropdown-toggle.active::before {
+    width: 80% !important;
 }
 
 .mega-menu {
     display: block;
-    top: calc(100% + 14px);
+    top: calc(100% + 15px);
     left: 50%;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
     transform: translateX(-50%) translateY(10px);
     transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
-    width: min(900px, 90vw);
+    width: min(820px, 92vw);
     background: var(--bg-primary);
     border: 1px solid var(--border-color);
     border-radius: 16px;
     box-shadow: var(--shadow-xl);
     padding: 0;
     margin: 0;
+    z-index: 99999;
 }
 
 .mega-dropdown:hover .mega-menu,
@@ -551,25 +714,29 @@ img {
 
 .mega-menu-inner {
     display: grid;
-    grid-template-columns: 220px 1fr;
+    grid-template-columns: 200px 1fr;
 }
 
 .mega-intro {
     background: var(--bg-secondary);
-    padding: 2rem 1.75rem;
+    padding: 24px;
     border-radius: 16px 0 0 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .mega-intro h4 {
-    font-size: 1.4rem;
+    font-size: 1.25rem;
     color: var(--secondary-color);
-    margin-bottom: 0.75rem;
+    margin-bottom: 10px;
     font-family: var(--font-secondary);
     font-weight: 800;
 }
 
 .mega-intro p {
-    font-size: 0.875rem;
+    font-size: 0.85rem;
+    line-height: 1.5;
     color: var(--text-secondary);
     margin: 0;
 }
@@ -577,29 +744,35 @@ img {
 .mega-links {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 0;
-    padding: 1.25rem 1rem;
+    gap: 10px;
+    padding: 20px 15px;
 }
 
 .mega-link {
     display: flex;
     gap: 12px;
     align-items: flex-start;
-    padding: 1rem 0.85rem;
-    border-radius: 10px;
-    transition: var(--transition-normal);
+    padding: 12px;
+    border-radius: 8px;
+    transition: all 0.25s ease;
     color: var(--text-primary);
 }
 
 .mega-link:hover {
     background: var(--bg-secondary);
     color: var(--secondary-color);
+    transform: translateY(-2px);
 }
 
 .mega-link i {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     color: var(--secondary-color);
     margin-top: 3px;
+    transition: transform 0.25s ease;
+}
+
+.mega-link:hover i {
+    transform: scale(1.1);
 }
 
 .mega-link h5 {
@@ -612,6 +785,7 @@ img {
 
 .mega-link p {
     font-size: 0.8rem;
+    line-height: 1.4;
     color: var(--text-muted);
     margin: 0;
 }
@@ -629,12 +803,35 @@ img {
         margin-top: 0.5rem;
         display: none;
     }
+    
+    .mega-menu-inner {
+        grid-template-columns: 1fr;
+    }
+    
+    .mega-intro {
+        border-radius: 16px 16px 0 0;
+        padding: 20px 15px;
+    }
+    
+    .mega-links {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding: 15px 10px;
+    }
+    
+    .mega-link {
+        padding: 10px;
+    }
+    
+    .mega-link:hover {
+        transform: none;
+    }
 }
 
-    .mega-dropdown:hover .mega-menu,
-    .mega-dropdown.show .mega-menu {
-        display: block;
-    }
+.mega-dropdown:hover .mega-menu,
+.mega-dropdown.show .mega-menu {
+    display: block;
+}
 
     /* ==========================================
    Hero Section
@@ -936,6 +1133,202 @@ img {
         text-transform: uppercase;
         letter-spacing: 2px;
     }
+
+    /* ==========================================
+   Portfolio / Projects Page
+   ========================================== */
+
+/* Hero */
+.portfolio-hero {
+    padding: 160px 0 80px;
+    background: var(--bg-dark);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.portfolio-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 60%, rgba(65,30,121,0.55), transparent 65%);
+    pointer-events: none;
+}
+
+.portfolio-hero .eyebrow-pill {
+    display: inline-block;
+    padding: 6px 18px;
+    border-radius: 100px;
+    border: 1px solid rgba(194,191,200,0.35);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.portfolio-hero h1 {
+    color: #fff;
+    font-size: clamp(2.4rem, 5vw, 3.5rem);
+    margin-bottom: 1.25rem;
+}
+
+.portfolio-hero h1 em {
+    font-style: normal;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.portfolio-hero p {
+    color: rgba(255,255,255,0.72);
+    font-size: 1.1rem;
+    max-width: 580px;
+    margin: 0 auto 2.5rem;
+}
+
+/* Filter tabs */
+.filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 3rem;
+}
+
+.filter-btn {
+    padding: 10px 24px;
+    border-radius: 100px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-primary);
+    color: var(--text-secondary);
+    font-family: var(--font-secondary);
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-normal);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--gradient-primary);
+    color: #fff;
+    border-color: transparent;
+    box-shadow: var(--shadow-md);
+}
+
+/* Portfolio grid */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+}
+
+.portfolio-card {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    overflow: hidden;
+    transition: all var(--transition-normal);
+    position: relative;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+    border-color: transparent;
+}
+
+.portfolio-card-img {
+    position: relative;
+    overflow: hidden;
+    height: 220px;
+    background: var(--bg-tertiary);
+}
+
+.portfolio-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.portfolio-card:hover .portfolio-card-img img {
+    transform: scale(1.07);
+}
+
+.portfolio-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 40%, rgba(65,30,121,0.85) 100%);
+    opacity: 0;
+    transition: var(--transition-normal);
+    display: flex;
+    align-items: flex-end;
+    padding: 1.25rem;
+}
+
+.portfolio-card:hover .portfolio-card-overlay {
+    opacity: 1;
+}
+
+.overlay-link {
+    color: #fff;
+    font-family: var(--font-secondary);
+    font-weight: 700;
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.portfolio-card-body {
+    padding: 1.5rem;
+}
+
+.portfolio-cat {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--secondary-color);
+    margin-bottom: 0.6rem;
+}
+
+.portfolio-card-body h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.6rem;
+}
+
+.portfolio-card-body p {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.tech-tag {
+    padding: 4px 12px;
+    border-radius: 100px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+/* hidden cards (filter) */
+.portfolio-card.hidden {
+    display: none;
+}
 
     /* ==========================================
    About Section
@@ -1742,6 +2135,7 @@ img {
    Planing and Development Section
    ========================================== */
 
+   
     .timeline {
         position: relative;
         max-width: 1200px;
@@ -2911,6 +3305,742 @@ img {
 
 
 
+
+    /* ==========================================
+   eCommerce App Development Page
+   ========================================== */
+
+/* ── Salient Features (image + text pairs) ── */
+.feature-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    align-items: center;
+}
+
+.feature-pair.reverse {
+    direction: rtl;
+}
+
+.feature-pair.reverse > * {
+    direction: ltr;
+}
+
+.feature-pair-img {
+    border-radius: 14px;
+    overflow: hidden;
+    height: 240px;
+}
+
+.feature-pair-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.feature-pair:hover .feature-pair-img img {
+    transform: scale(1.05);
+}
+
+.feature-pair-content {
+    padding: 1rem;
+}
+
+.feature-pair-content h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+}
+
+.feature-pair-content p {
+    font-size: 0.95rem;
+    margin-bottom: 0;
+}
+
+/* ── Admin Panel ── */
+.admin-panel {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.admin-img {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.admin-img img {
+    width: 100%;
+    display: block;
+    transition: transform var(--transition-slow);
+}
+
+.admin-img:hover img {
+    transform: scale(1.03);
+}
+
+.admin-features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+}
+
+.admin-feature-item {
+    padding: 1.25rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-primary);
+    transition: var(--transition-normal);
+}
+
+.admin-feature-item:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-3px);
+}
+
+.admin-feature-item i {
+    font-size: 1.4rem;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.6rem;
+    display: block;
+}
+
+.admin-feature-item h5 {
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
+}
+
+.admin-feature-item p {
+    font-size: 0.82rem;
+    margin: 0;
+}
+
+/* ── Industry / Category tiles ── */
+.industry-tile-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+}
+
+.industry-tile {
+    padding: 1.75rem 1.5rem;
+    border-radius: 14px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-primary);
+    transition: var(--transition-normal);
+    text-align: center;
+}
+
+.industry-tile:hover {
+    background: var(--gradient-primary);
+    border-color: transparent;
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+}
+
+.industry-tile:hover h4,
+.industry-tile:hover p {
+    color: #fff;
+}
+
+.industry-tile i {
+    font-size: 2rem;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+    display: block;
+    transition: var(--transition-normal);
+}
+
+.industry-tile:hover i {
+    background: none;
+    -webkit-text-fill-color: #fff;
+    color: #fff;
+}
+
+.industry-tile h4 {
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+}
+
+.industry-tile p {
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+/* ── Tech Stack ── */
+.tech-stack-panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.tech-stack-img {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.tech-stack-img img {
+    width: 100%;
+    display: block;
+}
+
+.tech-stack-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tech-stack-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.1rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.tech-stack-list li:last-child {
+    border-bottom: none;
+}
+
+.tsl-icon {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    border-radius: 10px;
+    background: var(--gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.tsl-content h5 {
+    font-size: 0.95rem;
+    margin-bottom: 3px;
+}
+
+.tsl-content p {
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+/* ── Payments / Integrations ── */
+.payments-panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.payments-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 2rem;
+}
+
+.payments-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border-color);
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+}
+
+.payments-list i {
+    color: var(--accent-color);
+    font-size: 1.1rem;
+}
+
+.payments-img {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.payments-img img {
+    width: 100%;
+    display: block;
+    transition: transform var(--transition-slow);
+}
+
+.payments-img:hover img {
+    transform: scale(1.04);
+}
+
+/* ── AI Solutions ── */
+.ai-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.ai-card {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: var(--transition-normal);
+}
+
+.ai-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-color);
+}
+
+.ai-card-img {
+    height: 180px;
+    overflow: hidden;
+}
+
+.ai-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.ai-card:hover .ai-card-img img {
+    transform: scale(1.06);
+}
+
+.ai-card-body {
+    padding: 1.25rem 1.5rem;
+}
+
+.ai-card-body h4 {
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+}
+
+.ai-card-body p {
+    font-size: 0.88rem;
+    margin: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 991px) {
+    .feature-pair,
+    .admin-panel,
+    .tech-stack-panel,
+    .payments-panel,
+    .faq-with-image {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-pair.reverse {
+        direction: ltr;
+    }
+
+    .industry-tile-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ai-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .faq-side-img {
+        position: static;
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .industry-tile-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ai-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================
+   Food Delivery App Development Page
+   ========================================== */
+
+/* ── Tab switcher (User App / Partner App) ── */
+.tab-switcher {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 100px;
+    padding: 6px;
+    width: fit-content;
+    margin-inline: auto;
+}
+
+.tab-btn {
+    padding: 10px 28px;
+    border-radius: 100px;
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    font-family: var(--font-secondary);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-normal);
+}
+
+.tab-btn.active {
+    background: var(--gradient-primary);
+    color: #fff;
+    box-shadow: var(--shadow-sm);
+}
+
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+/* ── User App feature cards (image top) ── */
+.user-features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.user-feature-card {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: var(--transition-normal);
+}
+
+.user-feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-color);
+}
+
+.user-feature-img {
+    height: 160px;
+    overflow: hidden;
+}
+
+.user-feature-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.user-feature-card:hover .user-feature-img img {
+    transform: scale(1.07);
+}
+
+.user-feature-body {
+    padding: 1.25rem;
+}
+
+.user-feature-body h5 {
+    font-size: 0.98rem;
+    margin-bottom: 0.4rem;
+}
+
+.user-feature-body p {
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+/* ── Delivery Partner features grid ── */
+.partner-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.partner-card {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 1.75rem 1.5rem;
+    transition: var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.partner-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--gradient-primary);
+    opacity: 0;
+    transition: var(--transition-normal);
+}
+
+.partner-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: transparent;
+}
+
+.partner-card:hover::before {
+    opacity: 1;
+}
+
+.partner-card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: var(--bg-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    background: var(--gradient-primary);
+    color: #fff;
+    transition: var(--transition-normal);
+}
+
+.partner-card h4 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.partner-card p {
+    font-size: 0.875rem;
+    margin: 0;
+}
+
+/* ── Why Choose Us - food specific layout ── */
+.why-food-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.why-food-card {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    transition: var(--transition-normal);
+    text-align: left;
+}
+
+.why-food-card:hover {
+    border-color: transparent;
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-6px);
+}
+
+.why-food-card:nth-child(odd):hover {
+    background: var(--gradient-primary);
+}
+
+.why-food-card:nth-child(odd):hover h4,
+.why-food-card:nth-child(odd):hover p,
+.why-food-card:nth-child(odd):hover i {
+    color: #fff !important;
+    -webkit-text-fill-color: #fff;
+}
+
+.why-food-card i {
+    font-size: 2rem;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+    display: block;
+    transition: var(--transition-normal);
+}
+
+.why-food-card h4 {
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+    transition: var(--transition-normal);
+}
+
+.why-food-card p {
+    font-size: 0.875rem;
+    margin: 0;
+    transition: var(--transition-normal);
+}
+
+/* ── Responsive ── */
+@media (max-width: 991px) {
+    .user-features-grid,
+    .partner-grid,
+    .why-food-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .user-features-grid,
+    .partner-grid,
+    .why-food-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tab-btn {
+        padding: 9px 18px;
+        font-size: 0.82rem;
+    }
+}
+
+/* ==========================================
+   Healthcare App Development Page
+   ========================================== */
+
+/* ── Doctor App — only 3 cards, wider layout ── */
+.doctor-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.doctor-card {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: var(--transition-normal);
+}
+
+.doctor-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--secondary-color);
+}
+
+.doctor-card-img {
+    height: 200px;
+    overflow: hidden;
+}
+
+.doctor-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.doctor-card:hover .doctor-card-img img {
+    transform: scale(1.06);
+}
+
+.doctor-card-body {
+    padding: 1.4rem 1.5rem;
+}
+
+.doctor-card-body h5 {
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+}
+
+.doctor-card-body p {
+    font-size: 0.875rem;
+    margin: 0;
+}
+
+/* ── Healthcare Solutions — 6 stat-style tiles ── */
+.health-solution-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+}
+
+.health-solution-card {
+    padding: 2rem 1.5rem;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-primary);
+    transition: var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.health-solution-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--gradient-primary);
+    transform: scaleX(0);
+    transition: var(--transition-normal);
+    transform-origin: left;
+}
+
+.health-solution-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-5px);
+    border-color: transparent;
+}
+
+.health-solution-card:hover::after {
+    transform: scaleX(1);
+}
+
+.health-solution-card i {
+    font-size: 2rem;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.health-solution-card h4 {
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+}
+
+.health-solution-card p {
+    font-size: 0.875rem;
+    margin: 0;
+}
+
+/* ── Why Choose */
+
+/* ── Responsive ── */
+@media (max-width: 991px) {
+    .doctor-grid,
+    .health-solution-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .doctor-grid,
+    .health-solution-grid {
+        grid-template-columns: 1fr;
+    }
+}
 
     /* ==========================================
    Team Section
