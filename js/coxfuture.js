@@ -29,18 +29,89 @@ themeToggle.addEventListener('click', () => {
 });
 
 // ==========================================
-// Navbar Scroll Effect
+// Unified Scroll Handlers & Listeners (Optimized)
 // ==========================================
 const navbar = document.getElementById('mainNav');
 const navLinks = document.querySelectorAll('.nav-link');
+const sections = document.querySelectorAll('section[id]');
+const scrollTopBtn = document.getElementById('scrollTopBtn');
+const heroSection = document.querySelector('.hero-section');
+const parallaxElements = document.querySelectorAll('.hero-shapes .shape');
+const timelineItems = document.querySelectorAll('.timeline-item');
 
-window.addEventListener('scroll', () => {
+const handleNavbarScroll = () => {
+    if (!navbar) return;
     if (window.scrollY > 100) {
         navbar.classList.add('scrolled');
     } else {
         navbar.classList.remove('scrolled');
     }
-});
+};
+
+const activateNavLink = () => {
+    if (!sections.length || !navLinks.length) return;
+    let currentSection = '';
+    const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (scrollPos >= (sectionTop - 100)) {
+            currentSection = section.getAttribute('id');
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${currentSection}`) {
+            link.classList.add('active');
+        }
+    });
+};
+
+const handleScrollTopBtn = () => {
+    if (!scrollTopBtn) return;
+    if ((window.pageYOffset || document.documentElement.scrollTop) > 300) {
+        scrollTopBtn.classList.add('show');
+    } else {
+        scrollTopBtn.classList.remove('show');
+    }
+};
+
+const handleParallax = () => {
+    if (!heroSection || !parallaxElements.length) return;
+    const scrolled = window.pageYOffset || document.documentElement.scrollTop;
+    parallaxElements.forEach((el, index) => {
+        const speed = 0.3 + (index * 0.1);
+        el.style.transform = `translateY(${scrolled * speed}px)`;
+    });
+};
+
+const revealTimeline = () => {
+    if (!timelineItems.length) return;
+    timelineItems.forEach(item => {
+        const itemTop = item.getBoundingClientRect().top;
+        const triggerPoint = window.innerHeight * 0.8;
+        if (itemTop < triggerPoint) {
+            item.classList.add('show');
+        }
+    });
+};
+
+// Single throttled scroll event listener
+const onScroll = () => {
+    handleNavbarScroll();
+    activateNavLink();
+    handleScrollTopBtn();
+    handleParallax();
+    revealTimeline();
+};
+
+// Initial triggers
+handleNavbarScroll();
+revealTimeline();
+
+const throttledScroll = throttle(onScroll, 50);
+window.addEventListener('scroll', throttledScroll);
 
 // ==========================================
 // Smooth Scroll Navigation
@@ -75,31 +146,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ==========================================
-// Active Navigation Link on Scroll
+// Active Navigation Link on Scroll (Moved to unified handler)
 // ==========================================
-const sections = document.querySelectorAll('section[id]');
-
-const activateNavLink = () => {
-    let currentSection = '';
-
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-
-        if (window.pageYOffset >= (sectionTop - 100)) {
-            currentSection = section.getAttribute('id');
-        }
-    });
-
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${currentSection}`) {
-            link.classList.add('active');
-        }
-    });
-};
-
-window.addEventListener('scroll', activateNavLink);
 
 // ==========================================
 // Scroll Reveal Animation (Intersection Observer)
@@ -450,24 +498,171 @@ function showNotification(message, type = 'success') {
 }
 
 // ==========================================
-// Scroll to Top Button
+// Scroll to Top Button Click Listener
 // ==========================================
-const scrollTopBtn = document.getElementById('scrollTopBtn');
-
-window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 300) {
-        scrollTopBtn.classList.add('show');
-    } else {
-        scrollTopBtn.classList.remove('show');
-    }
-});
-
-scrollTopBtn.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+if (scrollTopBtn) {
+    scrollTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     });
-});
+}
+
+// ==========================================
+// Responsive Mega Menu Click Handlers
+// ==========================================
+const initResponsiveMegaMenu = () => {
+    const servicesToggle = document.querySelector('.mega-dropdown > .nav-link');
+    const servicesMenu = document.querySelector('.mega-menu');
+    const industriesToggle = document.querySelector('.industries-menu > .nav-link');
+    const industriesMenu = document.querySelector('.industries-dropdown');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+
+    if (!servicesToggle || !servicesMenu || !industriesToggle || !industriesMenu) return;
+
+    // Set accessibility attributes
+    servicesToggle.setAttribute('role', 'button');
+    servicesToggle.setAttribute('aria-haspopup', 'true');
+    servicesToggle.setAttribute('aria-expanded', 'false');
+    
+    industriesToggle.setAttribute('role', 'button');
+    industriesToggle.setAttribute('aria-haspopup', 'true');
+    industriesToggle.setAttribute('aria-expanded', 'false');
+
+    const expandAccordion = (menu, button) => {
+        closeAllSubmenus(menu);
+        menu.classList.add('show');
+        button.setAttribute('aria-expanded', 'true');
+        button.classList.add('show');
+        const parentItem = button.closest('.nav-item');
+        if (parentItem) parentItem.classList.add('show');
+        
+        menu.style.maxHeight = '0px';
+        menu.offsetHeight; // force reflow
+        menu.style.maxHeight = menu.scrollHeight + 'px';
+        
+        const onTransitionEnd = (e) => {
+            if (e.propertyName === 'max-height') {
+                menu.style.maxHeight = 'none';
+                menu.removeEventListener('transitionend', onTransitionEnd);
+            }
+        };
+        menu.addEventListener('transitionend', onTransitionEnd);
+    };
+
+    const collapseAccordion = (menu, button) => {
+        button.setAttribute('aria-expanded', 'false');
+        button.classList.remove('show');
+        const parentItem = button.closest('.nav-item');
+        if (parentItem) parentItem.classList.remove('show');
+        
+        menu.style.maxHeight = menu.scrollHeight + 'px';
+        menu.offsetHeight; // force reflow
+        menu.style.maxHeight = '0px';
+        menu.classList.remove('show');
+    };
+
+    const closeAllSubmenus = (exceptMenu) => {
+        if (servicesMenu.classList.contains('show') && servicesMenu !== exceptMenu) {
+            collapseAccordion(servicesMenu, servicesToggle);
+        }
+        if (industriesMenu.classList.contains('show') && industriesMenu !== exceptMenu) {
+            collapseAccordion(industriesMenu, industriesToggle);
+        }
+    };
+
+    const resetAllSubmenus = () => {
+        servicesMenu.style.maxHeight = '0px';
+        servicesMenu.classList.remove('show');
+        servicesToggle.setAttribute('aria-expanded', 'false');
+        servicesToggle.classList.remove('show');
+        const servicesParent = servicesToggle.closest('.nav-item');
+        if (servicesParent) servicesParent.classList.remove('show');
+
+        industriesMenu.style.maxHeight = '0px';
+        industriesMenu.classList.remove('show');
+        industriesToggle.setAttribute('aria-expanded', 'false');
+        industriesToggle.classList.remove('show');
+        const industriesParent = industriesToggle.closest('.nav-item');
+        if (industriesParent) industriesParent.classList.remove('show');
+    };
+
+    // Services Click
+    servicesToggle.addEventListener('click', (e) => {
+        if (window.innerWidth < 992) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (servicesMenu.classList.contains('show')) {
+                collapseAccordion(servicesMenu, servicesToggle);
+            } else {
+                expandAccordion(servicesMenu, servicesToggle);
+            }
+        }
+    });
+
+    // Industries Click
+    industriesToggle.addEventListener('click', (e) => {
+        if (window.innerWidth < 992) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (industriesMenu.classList.contains('show')) {
+                collapseAccordion(industriesMenu, industriesToggle);
+            } else {
+                expandAccordion(industriesMenu, industriesToggle);
+            }
+        }
+    });
+
+    // Handle outside clicks
+    document.addEventListener('click', (e) => {
+        if (window.innerWidth < 992) {
+            const insideToggle = servicesToggle.contains(e.target) || industriesToggle.contains(e.target);
+            const insideMenu = servicesMenu.contains(e.target) || industriesMenu.contains(e.target);
+            
+            if (!insideToggle && !insideMenu) {
+                closeAllSubmenus();
+            }
+        }
+    });
+
+    // Escape Key Closure
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeAllSubmenus();
+        }
+    });
+
+    // Reset when mobile menu collapses
+    if (navbarCollapse) {
+        navbarCollapse.addEventListener('show.bs.collapse', () => {
+            document.body.classList.add('navbar-open');
+        });
+        navbarCollapse.addEventListener('hidden.bs.collapse', () => {
+            document.body.classList.remove('navbar-open');
+            resetAllSubmenus();
+        });
+    }
+
+    // Reset inline styles when resizing to desktop
+    window.addEventListener('resize', debounce(() => {
+        if (window.innerWidth >= 992) {
+            document.body.classList.remove('navbar-open');
+            servicesMenu.style.maxHeight = '';
+            industriesMenu.style.maxHeight = '';
+            servicesMenu.classList.remove('show');
+            industriesMenu.classList.remove('show');
+            servicesToggle.setAttribute('aria-expanded', 'false');
+            industriesToggle.setAttribute('aria-expanded', 'false');
+            const servicesParent = servicesToggle.closest('.nav-item');
+            if (servicesParent) servicesParent.classList.remove('show');
+            const industriesParent = industriesToggle.closest('.nav-item');
+            if (industriesParent) industriesParent.classList.remove('show');
+        }
+    }, 100));
+};
+
+initResponsiveMegaMenu();
 
 // ==========================================
 // Mobile Menu Auto Close on Outside Click
@@ -487,21 +682,8 @@ document.addEventListener('click', (e) => {
 });
 
 // ==========================================
-// Parallax Effect for Hero Section
+// Parallax Effect for Hero Section (Moved to unified handler)
 // ==========================================
-const heroSection = document.querySelector('.hero-section');
-
-if (heroSection) {
-    window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        const parallaxElements = document.querySelectorAll('.hero-shapes .shape');
-
-        parallaxElements.forEach((el, index) => {
-            const speed = 0.3 + (index * 0.1);
-            el.style.transform = `translateY(${scrolled * speed}px)`;
-        });
-    });
-}
 
 // ==========================================
 // Lazy Loading Images
@@ -626,12 +808,7 @@ function throttle(func, limit) {
     };
 }
 
-// Apply throttle to scroll event for better performance
-const throttledScroll = throttle(() => {
-    activateNavLink();
-}, 100);
-
-window.addEventListener('scroll', throttledScroll);
+// Throttled scroll is registered above globally.
 
 // ==========================================
 // Browser Compatibility Check
@@ -765,20 +942,8 @@ document.querySelectorAll('.btn').forEach(btn => {
 
 // Develpment and planning
 
-const timelineItems = document.querySelectorAll('.timeline-item');
-
-const revealTimeline = () => {
-    timelineItems.forEach(item => {
-        const itemTop = item.getBoundingClientRect().top;
-        const triggerPoint = window.innerHeight * 0.8;
-
-        if (itemTop < triggerPoint) {
-            item.classList.add('show');
-        }
-    });
-};
-
-window.addEventListener('scroll', revealTimeline);
+// Timeline scroll observer is handled in unified handler.
+// Trigger initial check on window load:
 window.addEventListener('load', revealTimeline);
 
 // Filter for portfolio
