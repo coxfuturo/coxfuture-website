@@ -346,11 +346,56 @@ if (contactForm) {
         }
 
         if (isValid) {
-            // Show success message
-            showNotification('Thank you! Your message has been sent successfully. We will contact you soon.', 'success');
-            contactForm.reset();
-        } else {
-            showNotification('Please fill in all required fields correctly.', 'error');
+
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = 'Sending...';
+
+            fetch(contactForm.action, {
+                method: "POST",
+                body: new FormData(contactForm)
+            })
+                .then(response => response.text())
+                .then(data => {
+                    console.log(data);
+                    if (data.trim() === "success") {
+
+                        showNotification(
+                            "Thank you! Your message has been sent successfully.",
+                            "success"
+                        );
+
+                        contactForm.reset();
+
+                    } else {
+
+                        showNotification(
+                            "Unable to send your message.",
+                            "error"
+                        );
+
+                    }
+
+                })
+                .catch(() => {
+
+                    showNotification(
+                        "Server Error. Please try again.",
+                        "error"
+                    );
+
+                })
+                .finally(() => {
+
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = `
+            <span>Send Message</span>
+            <i class="fas fa-paper-plane"></i>
+        `;
+
+                });
+
         }
     });
 }
