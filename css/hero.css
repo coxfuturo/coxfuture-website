@@ -109,33 +109,35 @@
 .hero-badge {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 8px 20px;
+    gap: 9px;
+    padding: 9px 20px;
     background: var(--glass-bg);
     backdrop-filter: blur(10px);
     border: 1px solid var(--glass-border);
-    border-radius: 50px;
-    font-size: 0.875rem;
+    border-radius: var(--radius-pill);
+    font-size: 0.8125rem;
     font-weight: 600;
+    letter-spacing: var(--tracking-wide);
     color: var(--primary-color);
     margin-bottom: 2rem;
-    animation: slideInDown 0.8s ease;
+    animation: slideInDown 0.8s var(--ease-premium);
 }
 
 .badge-dot {
-    width: 8px;
-    height: 8px;
-    background: var(--primary-color);
+    width: 7px;
+    height: 7px;
+    background: var(--accent-color);
     border-radius: 50%;
-    animation: pulse 2s ease-in-out infinite;
+    animation: pulse 2.4s ease-in-out infinite;
 }
 
 .hero-title {
-    font-size: 4rem;
-    font-weight: 900;
-    line-height: 1.1;
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: var(--tracking-tight);
+    line-height: 1.08;
     margin-bottom: 1.5rem;
-    animation: slideInUp 0.8s ease;
+    animation: slideInUp 0.8s var(--ease-premium);
 }
 
 .title-main {
@@ -149,21 +151,22 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    font-size: 4.5rem;
+    font-size: 3.875rem;
 }
 
 .title-sub {
     display: block;
     color: var(--text-secondary);
-    font-size: 3.5rem;
+    font-size: 3rem;
 }
 
 .hero-description {
-    font-size: 1rem;
+    font-size: 1.0625rem;
+    line-height: 1.7;
     color: var(--text-secondary);
     max-width: 600px;
     margin-bottom: 2.5rem;
-    animation: slideInUp 0.8s ease 0.2s;
+    animation: slideInUp 0.8s var(--ease-premium) 0.2s;
     animation-fill-mode: both;
 }
 
@@ -172,7 +175,7 @@
     gap: 1.5rem;
     flex-wrap: wrap;
     margin-bottom: 3rem;
-    animation: slideInUp 0.8s ease 0.4s;
+    animation: slideInUp 0.8s var(--ease-premium) 0.4s;
     animation-fill-mode: both;
 }
 
@@ -180,7 +183,7 @@
     display: flex;
     gap: 3rem;
     flex-wrap: wrap;
-    animation: slideInUp 0.8s ease 0.6s;
+    animation: slideInUp 0.8s var(--ease-premium) 0.6s;
     animation-fill-mode: both;
 }
 
@@ -218,7 +221,7 @@
     width: 24px;
     height: 40px;
     border: 2px solid var(--primary-color);
-    border-radius: 20px;
+    border-radius: var(--radius-lg);
     margin: 0 auto 10px;
     position: relative;
 }

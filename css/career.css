@@ -14,7 +14,7 @@
     padding: 180px 0 110px;
     color: #ffffff;
     background:
-        linear-gradient(180deg, rgba(152, 152, 153, 0.88) 0%, rgba(65, 30, 121, 0.85) 100%),
+        linear-gradient(180deg, rgba(20, 16, 31, 0.82) 0%, rgba(65, 30, 121, 0.88) 100%),
         url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
     overflow: hidden;
 }
@@ -42,7 +42,7 @@
 }
 
 .career-hero-badge {
-    animation: slideInDown 0.8s ease;
+    animation: slideInDown 0.8s var(--ease-premium);
 }
 
 .career-hero-title {
@@ -52,7 +52,7 @@
     max-width: 800px;
     color: #ffffff !important;
     margin-top: 1.25rem;
-    animation: slideInUp 0.8s ease 0.1s;
+    animation: slideInUp 0.8s var(--ease-premium) 0.1s;
     animation-fill-mode: both;
 }
 
@@ -69,13 +69,13 @@
     color: rgba(255, 255, 255, 0.82);
     max-width: 620px;
     line-height: 1.7;
-    animation: slideInUp 0.8s ease 0.25s;
+    animation: slideInUp 0.8s var(--ease-premium) 0.25s;
     animation-fill-mode: both;
 }
 
 .career-hero-cta {
     margin-top: 2.25rem;
-    animation: slideInUp 0.8s ease 0.4s;
+    animation: slideInUp 0.8s var(--ease-premium) 0.4s;
     animation-fill-mode: both;
     position: relative;
     overflow: hidden;
@@ -93,7 +93,7 @@
 .benefit-card {
     background: var(--bg-primary);
     border: 1px solid var(--border-color);
-    border-radius: 16px;
+    border-radius: var(--radius-md);
     padding: 2rem 1.5rem;
     text-align: center;
     transition: all var(--transition-normal);
@@ -116,7 +116,7 @@
 .benefit-icon {
     width: 56px;
     height: 56px;
-    border-radius: 14px;
+    border-radius: var(--radius-md);
     background: var(--bg-secondary);
     margin: 0 auto 1.25rem;
     display: flex;
@@ -169,7 +169,7 @@
 .job-card-inner {
     background: var(--bg-primary);
     border: 1px solid var(--border-color);
-    border-radius: 20px;
+    border-radius: var(--radius-lg);
     padding: 1.75rem;
     height: 100%;
     transition: all var(--transition-normal);
@@ -230,7 +230,7 @@
     align-items: center;
     justify-content: center;
     background: var(--gradient-primary);
-    border-radius: 14px;
+    border-radius: var(--radius-md);
     font-size: 1.25rem;
     color: #fff;
 }
@@ -263,7 +263,7 @@
 }
 
 .job-meta i {
-    color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 .job-apply-btn {
@@ -292,9 +292,9 @@
 
 .process-arrow {
     align-self: center;
-    color: var(--primary-color);
+    color: var(--secondary-color);
     font-size: 1.1rem;
-    opacity: 0.6;
+    opacity: 0.35;
     flex-shrink: 0;
     padding: 0 0.5rem;
 }
@@ -330,7 +330,7 @@
 
 .gallery-item {
     position: relative;
-    border-radius: 16px;
+    border-radius: var(--radius-md);
     overflow: hidden;
     box-shadow: var(--shadow-sm);
     cursor: pointer;
@@ -403,7 +403,7 @@
     z-index: 9999;
     padding: 2rem;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity var(--transition-normal);
 }
 
 .gallery-lightbox.show {
@@ -420,7 +420,7 @@
 .gallery-lightbox-content img {
     max-width: 100%;
     max-height: 75vh;
-    border-radius: 16px;
+    border-radius: var(--radius-md);
     box-shadow: var(--shadow-xl);
 }
 

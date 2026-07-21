@@ -20,7 +20,7 @@
 .portfolio-hero .eyebrow-pill {
     display: inline-block;
     padding: 6px 18px;
-    border-radius: 100px;
+    border-radius: var(--radius-pill);
     border: 1px solid rgba(194, 191, 200, 0.35);
     font-size: 0.8rem;
     font-weight: 600;
@@ -61,7 +61,7 @@
 
 .filter-btn {
     padding: 10px 24px;
-    border-radius: 100px;
+    border-radius: var(--radius-pill);
     border: 1px solid var(--border-color);
     background: var(--bg-primary);
     color: var(--text-secondary);
@@ -89,7 +89,7 @@
 .portfolio-card {
     background: var(--bg-primary);
     border: 1px solid var(--border-color);
-    border-radius: 18px;
+    border-radius: var(--radius-lg);
     overflow: hidden;
     transition: all var(--transition-normal);
 }
@@ -175,7 +175,7 @@
 
 .tech-tag {
     padding: 4px 12px;
-    border-radius: 100px;
+    border-radius: var(--radius-pill);
     background: var(--bg-secondary);
     border: 1px solid var(--border-color);
     font-size: 0.75rem;

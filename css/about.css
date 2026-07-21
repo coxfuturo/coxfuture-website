@@ -10,14 +10,14 @@
 
 .glass-card {
     position: relative;
-    border-radius: 20px;
+    border-radius: var(--radius-lg);
     overflow: hidden;
     box-shadow: var(--shadow-xl);
 }
 
 .glass-card img {
     width: 100%;
-    border-radius: 20px;
+    border-radius: var(--radius-lg);
     transition: transform var(--transition-slow);
 }
 
@@ -32,7 +32,7 @@
     background: var(--glass-bg);
     backdrop-filter: blur(20px);
     border: 1px solid var(--glass-border);
-    border-radius: 16px;
+    border-radius: var(--radius-md);
     padding: 20px 30px;
     text-align: center;
     box-shadow: var(--glass-shadow);
@@ -73,7 +73,7 @@
     align-items: center;
     padding: 0.5rem;
     background: var(--bg-primary);
-    border-radius: 12px;
+    border-radius: var(--radius-sm);
     border: 1px solid var(--border-color);
     transition: all var(--transition-normal);
 }
@@ -91,7 +91,7 @@
     align-items: center;
     justify-content: center;
     background: var(--gradient-primary);
-    border-radius: 12px;
+    border-radius: var(--radius-sm);
     color: white;
     font-size: 1.5rem;
     flex-shrink: 0;
@@ -154,11 +154,11 @@
     background: var(--bg-primary);
     backdrop-filter: blur(10px);
     border: 1px solid var(--border-color);
-    border-radius: 24px;
+    border-radius: var(--radius-xl);
     padding: 40px 20px;
     text-align: center;
     box-shadow: var(--shadow-lg);
-    transition: all 0.3s ease;
+    transition: all var(--transition-normal);
 }
 
 [data-theme="dark"] .about-stat-card {
@@ -204,7 +204,7 @@
 }
 
 .about-img-mask {
-    border-radius: 30px;
+    border-radius: var(--radius-xl);
     overflow: hidden;
     box-shadow: 25px 25px 0px rgba(65, 30, 121, 0.1);
     transition: all var(--transition-normal);
@@ -263,9 +263,9 @@
 .about-work-card {
     background: var(--bg-primary);
     padding: 25px;
-    border-radius: 14px;
+    border-radius: var(--radius-md);
     border: 1px solid var(--border-color);
-    transition: 0.3s ease;
+    transition: var(--transition-normal);
 }
 
 .about-work-card:hover {
@@ -345,10 +345,10 @@
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 16px;
+    border-radius: var(--radius-md);
     padding: 25px;
     color: #ffffff;
-    transition: 0.3s ease;
+    transition: var(--transition-normal);
 }
 
 .about-engagement-card:hover {
@@ -412,9 +412,9 @@
 .about-why-card {
     background: var(--bg-secondary);
     border: 1px solid var(--border-color);
-    border-radius: 16px;
+    border-radius: var(--radius-md);
     padding: 25px;
-    transition: 0.3s ease;
+    transition: var(--transition-normal);
 }
 
 .about-why-card:hover {
@@ -430,7 +430,7 @@
 .about-why-number {
     width: 38px;
     height: 38px;
-    border-radius: 10px;
+    border-radius: var(--radius-sm);
     background: var(--secondary-color);
     color: #ffffff;
     display: flex;
@@ -491,9 +491,9 @@
 .about-infra-card {
     background: var(--bg-primary);
     border: 1px solid var(--border-color);
-    border-radius: 14px;
+    border-radius: var(--radius-md);
     padding: 22px;
-    transition: 0.3s ease;
+    transition: var(--transition-normal);
 }
 
 .about-infra-card:hover {
@@ -541,7 +541,7 @@
 
 .team-card {
     background: var(--bg-primary);
-    border-radius: 20px;
+    border-radius: var(--radius-lg);
     overflow: hidden;
     border: 1px solid var(--border-color);
     transition: all var(--transition-normal);
@@ -617,7 +617,7 @@
 }
 
 .team-role {
-    color: var(--primary-color);
+    color: var(--secondary-color);
     font-weight: 600;
     margin-bottom: 0.25rem;
 }
@@ -665,7 +665,7 @@
 .team-hero .eyebrow-pill {
     display: inline-block;
     padding: 6px 20px;
-    border-radius: 100px;
+    border-radius: var(--radius-pill);
     border: 1px solid rgba(194, 191, 200, 0.35);
     font-size: 0.8rem;
     font-weight: 600;
@@ -740,7 +740,7 @@
 
 /* .dept-btn {
     padding: 9px 22px;
-    border-radius: 100px;
+    border-radius: var(--radius-pill);
     border: 1px solid var(--border-color);
     background: var(--bg-primary);
     color: var(--text-secondary);
@@ -769,7 +769,7 @@
 .leader-card {
     background: var(--bg-primary);
     border: 1px solid var(--border-color);
-    border-radius: 20px;
+    border-radius: var(--radius-lg);
     overflow: hidden;
     transition: var(--transition-normal);
     position: relative;
@@ -873,7 +873,7 @@
 .team-card {
     background: var(--bg-primary);
     border: 1px solid var(--border-color);
-    border-radius: 16px;
+    border-radius: var(--radius-md);
     overflow: hidden;
     transition: var(--transition-normal);
     position: relative;
@@ -954,7 +954,7 @@
 .culture-card {
     background: var(--bg-primary);
     border: 1px solid var(--border-color);
-    border-radius: 16px;
+    border-radius: var(--radius-md);
     padding: 2rem 1.5rem;
     text-align: center;
     transition: var(--transition-normal);
@@ -977,7 +977,7 @@
 .culture-icon {
     width: 56px;
     height: 56px;
-    border-radius: 14px;
+    border-radius: var(--radius-md);
     background: var(--bg-secondary);
     margin: 0 auto 1.25rem;
     display: flex;
@@ -1025,7 +1025,7 @@
 .about-service-card {
     background: var(--bg-primary);
     border: 1px solid var(--border-color);
-    border-radius: 20px;
+    border-radius: var(--radius-lg);
     padding: 2rem 1.75rem;
     height: 100%;
     transition: all var(--transition-normal);
@@ -1040,7 +1040,7 @@
     background: var(--gradient-primary);
     opacity: 0;
     transition: opacity var(--transition-normal);
-    border-radius: 20px;
+    border-radius: var(--radius-lg);
 }
 
 .about-service-card:hover {
@@ -1066,7 +1066,7 @@
 .about-service-icon {
     width: 60px;
     height: 60px;
-    border-radius: 16px;
+    border-radius: var(--radius-md);
     background: var(--bg-secondary);
     display: flex;
     align-items: center;
@@ -1132,7 +1132,7 @@
 .about-tech-card {
     background: var(--bg-secondary);
     border: 1px solid var(--border-color);
-    border-radius: 16px;
+    border-radius: var(--radius-md);
     padding: 1.5rem 1rem;
     display: flex;
     flex-direction: column;
@@ -1178,7 +1178,7 @@
    ========================================== */
 .about-cta-premium {
     background: var(--gradient-primary);
-    border-radius: 24px;
+    border-radius: var(--radius-xl);
     padding: 70px 40px;
     color: #ffffff;
     position: relative;
@@ -1226,14 +1226,14 @@
     font-family: var(--font-secondary);
     font-size: 1rem;
     font-weight: 700;
-    border-radius: 50px;
+    border-radius: var(--radius-pill);
     transition: all var(--transition-normal);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.22);
 }
 
 .about-btn-premium:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 16px 38px rgba(0, 0, 0, 0.28);
     background: var(--bg-secondary);
     color: var(--secondary-color);
 }
@@ -1271,7 +1271,7 @@
 
     .about-cta-premium {
         padding: 50px 24px;
-        border-radius: 20px;
+        border-radius: var(--radius-lg);
     }
 
     .about-cta-premium h2 {
