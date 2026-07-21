@@ -4,9 +4,7 @@
 /* ==========================================
    Services Section
    ========================================== */
-#services {
-    background: var(--bg-secondary);
-}
+
 
 .service-card {
     background: var(--bg-primary);
