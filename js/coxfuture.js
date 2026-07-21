@@ -525,7 +525,7 @@ const initResponsiveMegaMenu = () => {
     servicesToggle.setAttribute('role', 'button');
     servicesToggle.setAttribute('aria-haspopup', 'true');
     servicesToggle.setAttribute('aria-expanded', 'false');
-    
+
     industriesToggle.setAttribute('role', 'button');
     industriesToggle.setAttribute('aria-haspopup', 'true');
     industriesToggle.setAttribute('aria-expanded', 'false');
@@ -537,11 +537,11 @@ const initResponsiveMegaMenu = () => {
         button.classList.add('show');
         const parentItem = button.closest('.nav-item');
         if (parentItem) parentItem.classList.add('show');
-        
+
         menu.style.maxHeight = '0px';
         menu.offsetHeight; // force reflow
         menu.style.maxHeight = menu.scrollHeight + 'px';
-        
+
         const onTransitionEnd = (e) => {
             if (e.propertyName === 'max-height') {
                 menu.style.maxHeight = 'none';
@@ -556,7 +556,7 @@ const initResponsiveMegaMenu = () => {
         button.classList.remove('show');
         const parentItem = button.closest('.nav-item');
         if (parentItem) parentItem.classList.remove('show');
-        
+
         menu.style.maxHeight = menu.scrollHeight + 'px';
         menu.offsetHeight; // force reflow
         menu.style.maxHeight = '0px';
@@ -619,7 +619,7 @@ const initResponsiveMegaMenu = () => {
         if (window.innerWidth < 992) {
             const insideToggle = servicesToggle.contains(e.target) || industriesToggle.contains(e.target);
             const insideMenu = servicesMenu.contains(e.target) || industriesMenu.contains(e.target);
-            
+
             if (!insideToggle && !insideMenu) {
                 closeAllSubmenus();
             }
@@ -961,6 +961,219 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
             }
         });
     });
+});
+
+/* ==========================================================
+   Career Page JavaScript
+   ========================================================== */
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    /* ==========================================
+       1. Current Openings — Job Filtering
+       ========================================== */
+    const deptButtons = document.querySelectorAll('.dept-filter .dept-btn');
+    const jobCards = document.querySelectorAll('.job-card');
+    const noJobsMsg = document.querySelector('.no-jobs-msg');
+
+    if (deptButtons.length && jobCards.length) {
+        deptButtons.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                // Toggle active state on filter buttons
+                deptButtons.forEach(function (b) { b.classList.remove('active'); });
+                btn.classList.add('active');
+
+                const category = btn.dataset.category;
+                let visibleCount = 0;
+
+                jobCards.forEach(function (card) {
+                    const matches = category === 'all' || card.dataset.category === category;
+                    card.classList.toggle('hidden', !matches);
+                    if (matches) visibleCount++;
+                });
+
+                if (noJobsMsg) {
+                    noJobsMsg.classList.toggle('d-none', visibleCount !== 0);
+                }
+            });
+        });
+    }
+
+    /* ==========================================
+       2. Life At CoxFuture — Gallery Lightbox
+       ========================================== */
+    const galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
+    const lightbox = document.getElementById('galleryLightbox');
+    const lightboxImg = document.getElementById('galleryLightboxImg');
+    const lightboxCaption = document.getElementById('galleryLightboxCaption');
+    const lightboxClose = document.getElementById('galleryLightboxClose');
+    const lightboxPrev = document.getElementById('galleryPrev');
+    const lightboxNext = document.getElementById('galleryNext');
+    let currentGalleryIndex = 0;
+
+    function openLightbox(index) {
+        if (!lightbox || !galleryItems[index]) return;
+        currentGalleryIndex = index;
+        const img = galleryItems[index].querySelector('img');
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightboxCaption.textContent = galleryItems[index].dataset.caption || img.alt;
+        lightbox.classList.add('show');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        if (!lightbox) return;
+        lightbox.classList.remove('show');
+        document.body.style.overflow = '';
+    }
+
+    function showNextImage(step) {
+        const total = galleryItems.length;
+        currentGalleryIndex = (currentGalleryIndex + step + total) % total;
+        openLightbox(currentGalleryIndex);
+    }
+
+    galleryItems.forEach(function (item, index) {
+        item.addEventListener('click', function () {
+            openLightbox(index);
+        });
+    });
+
+    if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+    if (lightboxPrev) lightboxPrev.addEventListener('click', function () { showNextImage(-1); });
+    if (lightboxNext) lightboxNext.addEventListener('click', function () { showNextImage(1); });
+
+    if (lightbox) {
+        lightbox.addEventListener('click', function (e) {
+            if (e.target === lightbox) closeLightbox();
+        });
+    }
+
+    document.addEventListener('keydown', function (e) {
+        if (!lightbox || !lightbox.classList.contains('show')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') showNextImage(-1);
+        if (e.key === 'ArrowRight') showNextImage(1);
+    });
+
+    /* ==========================================
+       3. Resume Upload — Show Selected File Name
+       ========================================== */
+    const resumeInput = document.getElementById('appResume');
+    const resumeFileName = document.getElementById('resumeFileName');
+
+    if (resumeInput && resumeFileName) {
+        resumeInput.addEventListener('change', function () {
+            if (resumeInput.files && resumeInput.files.length > 0) {
+                resumeFileName.textContent = resumeInput.files[0].name;
+            } else {
+                resumeFileName.textContent = 'No file selected';
+            }
+        });
+    }
+
+    /* ==========================================
+       4. Career Application Form — Client-Side Validation
+       ========================================== */
+    const applicationForm = document.getElementById('careerApplicationForm');
+
+    if (applicationForm) {
+        applicationForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            let isValid = true;
+
+            // Required text/select/file fields
+            const requiredFields = applicationForm.querySelectorAll('[required]');
+            requiredFields.forEach(function (field) {
+                const group = field.closest('.form-group');
+                let fieldValid = true;
+
+                if (field.type === 'file') {
+                    fieldValid = field.files && field.files.length > 0;
+                } else {
+                    fieldValid = field.value.trim() !== '';
+                }
+
+                if (group) {
+                    group.classList.toggle('has-error', !fieldValid);
+                }
+
+                if (!fieldValid) isValid = false;
+            });
+
+            // Email format check
+            const emailField = document.getElementById('appEmail');
+            if (emailField && emailField.value.trim() !== '') {
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                const emailGroup = emailField.closest('.form-group');
+                if (!emailPattern.test(emailField.value.trim())) {
+                    if (emailGroup) emailGroup.classList.add('has-error');
+                    isValid = false;
+                }
+            }
+
+            // Phone format check (digits, spaces, +, -, min 7 digits)
+            const phoneField = document.getElementById('appPhone');
+            if (phoneField && phoneField.value.trim() !== '') {
+                const digitsOnly = phoneField.value.replace(/\D/g, '');
+                const phoneGroup = phoneField.closest('.form-group');
+                if (digitsOnly.length < 7) {
+                    if (phoneGroup) phoneGroup.classList.add('has-error');
+                    isValid = false;
+                }
+            }
+
+            if (!isValid) {
+                if (typeof showNotification === 'function') {
+                    showNotification('Please fix the highlighted fields before submitting.', 'error');
+                }
+                const firstError = applicationForm.querySelector('.has-error');
+                if (firstError) {
+                    firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+                return;
+            }
+
+            // Simulate successful submission (no backend wired up in this template)
+            const submitBtn = applicationForm.querySelector('button[type="submit"]');
+            const originalHTML = submitBtn ? submitBtn.innerHTML : '';
+
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<span>Submitting...</span> <i class="fas fa-spinner fa-spin"></i>';
+            }
+
+            setTimeout(function () {
+                if (typeof showNotification === 'function') {
+                    showNotification('Application submitted successfully! We will get back to you soon.', 'success');
+                }
+                applicationForm.reset();
+                if (resumeFileName) resumeFileName.textContent = 'No file selected';
+                applicationForm.querySelectorAll('.has-error').forEach(function (group) {
+                    group.classList.remove('has-error');
+                });
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalHTML;
+                }
+            }, 1200);
+        });
+
+        // Clear error state as the user corrects a field
+        applicationForm.querySelectorAll('.form-control').forEach(function (field) {
+            field.addEventListener('input', function () {
+                const group = field.closest('.form-group');
+                if (group) group.classList.remove('has-error');
+            });
+            field.addEventListener('change', function () {
+                const group = field.closest('.form-group');
+                if (group) group.classList.remove('has-error');
+            });
+        });
+    }
+
 });
 
 
