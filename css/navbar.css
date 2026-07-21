@@ -144,7 +144,7 @@
 
 /* Homepage Transparent Navbar */
 .home-page .navbar:not(.scrolled) .nav-link {
-    color: rgba(255, 255, 255, 0.8) !important;
+    color: var(--text-light) !important;
 }
 
 .home-page .navbar:not(.scrolled) .nav-link:hover,
