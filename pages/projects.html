@@ -30,7 +30,7 @@
     <link rel="canonical" href="https://coxfuture.com/pages/projects.html">
 </head>
 
-<body>
+<body class="home-page">
 
     <!-- Navigation -->
     <header>
@@ -521,13 +521,18 @@
                                 With Us</h2>
                             <div class="title-underline"></div>
                         </div>
-                        <form class="contact-form" id="contactForm">
+                        <form class="contact-form" id="contactForm" action="../send-mail.php" method="POST">
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="name">Your Name
                                             *</label>
-                                        <input type="text" class="form-control" id="name" autocomplete="name" required>
+                                        <input type="text"
+       class="form-control"
+       id="name"
+       name="name"
+       autocomplete="name"
+       required>
                                         <i class="fas fa-user"></i>
                                     </div>
                                 </div>
@@ -535,7 +540,7 @@
                                     <div class="form-group">
                                         <label for="email">Your Email
                                             *</label>
-                                        <input type="email" class="form-control" id="email" autocomplete="email"
+                                        <input type="email" class="form-control" id="email" autocomplete="email" name="email"
                                             required>
                                         <i class="fas fa-envelope"></i>
                                     </div>
@@ -544,7 +549,7 @@
                                     <div class="form-group">
                                         <label for="phone">Phone
                                             Number</label>
-                                        <input type="tel" class="form-control" id="phone" autocomplete="phone">
+                                        <input type="tel" class="form-control" id="phone" name="phone" autocomplete="tel">
                                         <i class="fas fa-phone"></i>
                                     </div>
                                 </div>
@@ -552,9 +557,8 @@
                                     <div class="form-group">
                                         <label for="service">Service Needed
                                             *</label>
-                                        <select class="form-control" id="service" required>
-                                            <option value>Select
-                                                Service</option>
+                                        <select class="form-control" id="service" name="service" required>
+                                            <option value="" selected disabled>Select Service</option>
                                             <option value="software">Custom
                                                 Software
                                                 Development</option>
@@ -575,7 +579,7 @@
                                     <div class="form-group">
                                         <label for="message">Your Message
                                             *</label>
-                                        <textarea class="form-control" id="message" rows="5" required></textarea>
+                                        <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
                                         <i class="fas fa-comment"></i>
                                     </div>
                                 </div>

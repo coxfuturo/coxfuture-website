@@ -179,6 +179,10 @@
     animation-fill-mode: both;
 }
 
+.hero-buttons .btn-outline-primary{
+    color: var(--text-light);
+}
+
 .hero-stats {
     display: flex;
     gap: 3rem;
