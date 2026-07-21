@@ -99,7 +99,7 @@
         background: var(--glass-bg);
         backdrop-filter: blur(20px);
         padding: 1rem;
-        border-radius: 12px;
+        border-radius: var(--radius-sm);
         margin-top: 1rem;
     }
 
@@ -155,7 +155,7 @@
 
     .about-cta-premium {
         padding: 50px 15px;
-        border-radius: 20px;
+        border-radius: var(--radius-lg);
     }
 
     .about-cta-premium h2 {
@@ -181,7 +181,7 @@
                 background: var(--bg-primary);
                 padding: 16px;
                 margin-top: 10px;
-                border-radius: 10px;
+                border-radius: var(--radius-sm);
                 border: 1px solid var(--border-color);
                 box-shadow: var(--shadow-lg);
                 max-height: calc(100vh - 100px);
