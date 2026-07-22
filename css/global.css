@@ -441,3 +441,15 @@ img {
     }
 }
 
+/* Left to Right Slide Animation */
+@keyframes slideLeftToRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-80px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+

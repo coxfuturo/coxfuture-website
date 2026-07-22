@@ -27,7 +27,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/app.css">
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://coxfuture.com/pages/projects.html">
+    <link rel="canonical" href="https://coxfuture.com/pages/team.html">
 </head>
 
 <body class="home-page">
@@ -522,17 +522,14 @@
                             <div class="title-underline"></div>
                         </div>
                         <form class="contact-form" id="contactForm" action="../send-mail.php" method="POST">
+                            <input type="hidden" name="form_type" value="contact">
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="name">Your Name
                                             *</label>
-                                        <input type="text"
-       class="form-control"
-       id="name"
-       name="name"
-       autocomplete="name"
-       required>
+                                        <input type="text" class="form-control" id="name" name="name"
+                                            autocomplete="name" required>
                                         <i class="fas fa-user"></i>
                                     </div>
                                 </div>
@@ -540,8 +537,8 @@
                                     <div class="form-group">
                                         <label for="email">Your Email
                                             *</label>
-                                        <input type="email" class="form-control" id="email" autocomplete="email" name="email"
-                                            required>
+                                        <input type="email" class="form-control" id="email" autocomplete="email"
+                                            name="email" required>
                                         <i class="fas fa-envelope"></i>
                                     </div>
                                 </div>
@@ -549,7 +546,8 @@
                                     <div class="form-group">
                                         <label for="phone">Phone
                                             Number</label>
-                                        <input type="tel" class="form-control" id="phone" name="phone" autocomplete="tel">
+                                        <input type="tel" class="form-control" id="phone" name="phone"
+                                            autocomplete="tel">
                                         <i class="fas fa-phone"></i>
                                     </div>
                                 </div>
@@ -579,7 +577,8 @@
                                     <div class="form-group">
                                         <label for="message">Your Message
                                             *</label>
-                                        <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                                        <textarea class="form-control" id="message" name="message" rows="5"
+                                            required></textarea>
                                         <i class="fas fa-comment"></i>
                                     </div>
                                 </div>
