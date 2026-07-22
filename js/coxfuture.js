@@ -48,26 +48,6 @@ const handleNavbarScroll = () => {
     }
 };
 
-const activateNavLink = () => {
-    if (!sections.length || !navLinks.length) return;
-    let currentSection = '';
-    const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
-
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (scrollPos >= (sectionTop - 100)) {
-            currentSection = section.getAttribute('id');
-        }
-    });
-
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${currentSection}`) {
-            link.classList.add('active');
-        }
-    });
-};
-
 const handleScrollTopBtn = () => {
     if (!scrollTopBtn) return;
     if ((window.pageYOffset || document.documentElement.scrollTop) > 300) {
