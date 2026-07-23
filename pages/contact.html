@@ -27,7 +27,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/app.css">
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://coxfuture.com/pages/contact.html">
+    <link rel="canonical" href="https://coxfuture.com/pages/team.html">
 </head>
 
 <body>
@@ -197,7 +197,7 @@
                             </div>
                             <div class="info-content">
                                 <h4>Visit Us</h4>
-                                <p>H-202, Dallas Business Park 1, H Block, Sector 63<br>
+                                <p>LG-05, H-202, Dallas Business Park 1, H Block, Sector 63<br>
                                     Noida, Uttar Pradesh 201309</p>
                             </div>
                         </div>
@@ -219,7 +219,7 @@
                             </div>
                             <div class="info-content">
                                 <h4>Email Us</h4>
-                                <p>info@coxfuture.com<br>support@coxfuture.com</p>
+                                 <p>info@coxfuture.com</p>
                             </div>
                         </div>
 
@@ -229,14 +229,14 @@
                             </div>
                             <div class="info-content">
                                 <h4>Business Hours</h4>
-                                <p>Mon - Fri: 10:00 AM - 6:00 PM<br>Sat -
+                                <p>Mon - Sat: 10:00 AM - 7:00 PM<br>
                                     Sun: Closed</p>
                             </div>
                         </div>
 
                         <div class="social-links-large mt-4">
                             <a href="#" class="social-link"><i class="fa-brands fa-x-twitter"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://www.linkedin.com/company/coxfuture-technologies-pvt-ltd" class="social-link" target="_blank" ><i class="fab fa-linkedin-in"></i></a>
                             <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
                             <a href="#" class="social-link"><i class="fab fa-github"></i></a>
                         </div>
@@ -246,17 +246,14 @@
                 <div class="col-lg-7">
                     <div class="contact-form-wrapper scroll-reveal">
                         <form class="contact-form" id="contactForm" action="../send-mail.php" method="POST">
+                            <input type="hidden" name="form_type" value="contact">
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="name">Your Name
                                             *</label>
-                                        <input type="text"
-       class="form-control"
-       id="name"
-       name="name"
-       autocomplete="name"
-       required>
+                                        <input type="text" class="form-control" id="name" name="name"
+                                            autocomplete="name" required>
                                         <i class="fas fa-user"></i>
                                     </div>
                                 </div>
@@ -264,8 +261,8 @@
                                     <div class="form-group">
                                         <label for="email">Your Email
                                             *</label>
-                                        <input type="email" class="form-control" id="email" autocomplete="email" name="email"
-                                            required>
+                                        <input type="email" class="form-control" id="email" autocomplete="email"
+                                            name="email" required>
                                         <i class="fas fa-envelope"></i>
                                     </div>
                                 </div>
@@ -273,7 +270,8 @@
                                     <div class="form-group">
                                         <label for="phone">Phone
                                             Number</label>
-                                        <input type="tel" class="form-control" id="phone" name="phone" autocomplete="tel">
+                                        <input type="tel" class="form-control" id="phone" name="phone"
+                                            autocomplete="tel">
                                         <i class="fas fa-phone"></i>
                                     </div>
                                 </div>
@@ -303,7 +301,8 @@
                                     <div class="form-group">
                                         <label for="message">Your Message
                                             *</label>
-                                        <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                                        <textarea class="form-control" id="message" name="message" rows="5"
+                                            required></textarea>
                                         <i class="fas fa-comment"></i>
                                     </div>
                                 </div>
@@ -324,7 +323,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container-fluid px-5">
-            <div class="row g-4">
+            <div class="row g-2">
                 <div class="col-lg-4 col-md-6">
                     <div class="footer-widget">
                         <a class="navbar-brand" href="../coxfuture.html">
@@ -344,13 +343,10 @@
 
                 <div class="col-lg-2 col-md-6 col-6">
                     <div class="footer-widget">
-                        <h4>Quick Links</h4>
+                        <h4>Company</h4>
                         <ul class="footer-links">
-                            <li><a href="../coxfuture.html">Home</a></li>
                             <li><a href="../pages/about.html">About
                                     Us</a></li>
-                            <li><a href="../services/services.html">Services</a></li>
-                            <li><a href="../pages/projects.html">Portfolio</a></li>
                             <li><a href="../pages/career.html">Career</a></li>
                             <li><a href="../pages/contact.html">Contact</a></li>
                             <li><a href="../pages/team.html">Team</a></li>
@@ -358,7 +354,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6 col-6">
+                <div class="col-lg-2 col-md-6 col-6">
                     <div class="footer-widget">
                         <h4>Services</h4>
                         <ul class="footer-links">
@@ -372,21 +368,60 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-2 col-md-6 col-6">
                     <div class="footer-widget">
-                        <h4>Newsletter</h4>
-                        <p>Subscribe for updates and tech insights</p>
-                        <form class="newsletter-form">
-                            <div class="input-group">
-                                <input type="email" class="form-control" name="email" autocomplete="email"
-                                    placeholder="Your email">
-                                <button type="submit" class="btn btn-primary">
-                                    <i class="fas fa-paper-plane"></i>
-                                </button>
-                            </div>
-                        </form>
+                        <h4>Industries</h4>
+                        <ul class="footer-links">
+                            <li><a href="../industries/eCommerce.html">Business</a></li>
+                            <li><a href="../industries/healthCare.html">Education & HealthCare</a></li>
+                            <li><a href="../industries/real_estate.html">Property</a></li>
+                            <li><a href="../industries/travel.html">Travel</a></li>
+                        </ul>
                     </div>
                 </div>
+
+                <div class="col-lg-2 col-md-6 col-6">
+                    <div class="footer-widget">
+                        <h4>Contact Info</h4>
+
+                        <ul class="footer-links">
+
+                            <li>
+                                <div class="d-flex align-items-start gap-3">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>
+                                        CoxFuture Technologies,<br>
+                                        LG-05, H-202,<br>
+                                        Dallas 1 Business Park,<br>
+                                        Sector-63, Noida,<br>
+                                        UP - 201309
+                                    </span>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="d-flex align-items-center gap-3">
+                                    <i class="fa-solid fa-phone"></i>
+                                    <a href="tel:+919217790770">
+                                        +91 92177 90770
+                                    </a>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="d-flex align-items-center gap-3">
+                                    <i class="fas fa-envelope"></i>
+                                    <a href="mailto:info@coxfuture.com">
+                                        info@coxfuture.com
+                                    </a>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+
+
             </div>
 
             <hr>
