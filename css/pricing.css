@@ -1,10 +1,5 @@
 /* ==========================================
    Pricing Page
-   Page-specific styles only.
-   Layout/hierarchy loosely inspired by claris.com/pricing (not copied).
-   Built entirely on existing tokens from variables.css
-   (colors, radius, shadow, transitions, fonts).
-   Does not redefine or override any existing selectors.
    ========================================== */
 
 .pricing-page .section-padding {

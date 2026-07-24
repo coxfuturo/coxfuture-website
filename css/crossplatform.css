@@ -1,16 +1,21 @@
 /* ==========================================
-   Android App Development Service Page
+   International Cross Platform App Development Service Page
+   Page-specific styles only.
+   Built entirely on existing tokens from variables.css
+   (colors, radius, shadow, transitions, fonts).
+   Does not redefine or override any existing selectors,
+   global CSS, navbar, footer or theme.
    ========================================== */
 
-.android-page .section-padding {
+.cp-page .section-padding {
     padding: 100px 0;
 }
 
-.android-page .section-header {
+.cp-page .section-header {
     max-width: 700px;
 }
 
-.android-page .section-header.text-center {
+.cp-page .section-header.text-center {
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
@@ -19,7 +24,7 @@
 /* ==========================================
    Hero
    ========================================== */
-.android-hero {
+.cp-hero {
     position: relative;
     padding: 165px 0 110px;
     background: var(--bg-secondary);
@@ -27,39 +32,54 @@
     border-bottom: 1px solid var(--border-color);
 }
 
-.android-hero::before {
+.cp-hero::before {
     content: '';
     position: absolute;
-    top: -180px;
-    right: -160px;
-    width: 520px;
-    height: 520px;
+    top: -190px;
+    right: -150px;
+    width: 540px;
+    height: 540px;
     border-radius: 50%;
     background: var(--gradient-primary);
     opacity: 0.10;
     filter: blur(10px);
 }
 
-.android-hero::after {
+.cp-hero::after {
     content: '';
     position: absolute;
-    bottom: -220px;
-    left: -140px;
-    width: 420px;
-    height: 420px;
+    bottom: -230px;
+    left: -150px;
+    width: 440px;
+    height: 440px;
     border-radius: 50%;
     background: var(--accent-color);
     opacity: 0.08;
     filter: blur(10px);
 }
 
-.android-hero .container {
+.cp-hero .container {
     position: relative;
     z-index: 2;
 }
 
-.android-hero-title {
-    font-size: 3.25rem;
+.cp-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 18px;
+    border-radius: var(--radius-pill);
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+}
+
+.cp-hero-title {
+    font-size: 3.35rem;
     font-weight: 800;
     letter-spacing: var(--tracking-tight);
     line-height: 1.1;
@@ -67,14 +87,14 @@
     color: var(--text-primary);
 }
 
-.android-hero-title .accent-text {
+.cp-hero-title .accent-text {
     background: var(--gradient-premium);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
-.android-hero-description {
+.cp-hero-description {
     font-size: 1.125rem;
     line-height: 1.8;
     color: var(--text-secondary);
@@ -82,14 +102,14 @@
     margin-bottom: 1.75rem;
 }
 
-.android-hero-highlights {
+.cp-hero-features {
     display: flex;
     flex-wrap: wrap;
     gap: 0.75rem 1.5rem;
     margin-bottom: 2.25rem;
 }
 
-.android-hero-highlights span {
+.cp-hero-features span {
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -98,36 +118,35 @@
     color: var(--text-secondary);
 }
 
-.android-hero-highlights i {
+.cp-hero-features i {
     color: var(--accent-color);
     font-size: 0.9rem;
 }
 
-.android-hero-buttons {
+.cp-hero-buttons {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
 }
 
-/* --- Hero visual: phone mockup --- */
-.android-hero-visual {
+/* --- Hero visual: multi-device mockup --- */
+.cp-hero-visual {
     position: relative;
-    height: 500px;
+    height: 520px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.android-phone {
+.cp-visual-core {
     position: relative;
-    width: 240px;
-    height: 480px;
-    border-radius: 36px;
-    box-shadow: var(--shadow-xl);
+    width: 100%;
+    max-width: 420px;
+    filter: drop-shadow(var(--shadow-xl));
     animation: float 6s ease-in-out infinite;
 }
 
-.android-float {
+.cp-float {
     position: absolute;
     display: flex;
     align-items: center;
@@ -144,72 +163,60 @@
     color: var(--text-primary);
     animation: float 5s ease-in-out infinite;
     z-index: 3;
+    white-space: nowrap;
 }
 
-.android-float i {
+.cp-float i {
     font-size: 1rem;
     color: var(--secondary-color);
 }
 
-.android-float small {
-    display: block;
-    font-size: 0.6875rem;
-    font-weight: 500;
-    color: var(--text-muted);
-}
-
-.android-float-1 {
+.cp-float-1 {
     top: 0%;
-    left: -10%;
+    left: -8%;
     animation-delay: 0s;
 }
 
-.android-float-2 {
+.cp-float-2 {
     top: 14%;
-    right: -14%;
+    right: -12%;
     animation-delay: 0.4s;
 }
 
-.android-float-3 {
-    top: 40%;
-    left: -16%;
+.cp-float-3 {
+    top: 46%;
+    left: -14%;
     animation-delay: 0.8s;
 }
 
-.android-float-4 {
-    top: 54%;
+.cp-float-4 {
+    top: 46%;
     right: -16%;
     animation-delay: 1.2s;
 }
 
-.android-float-5 {
-    bottom: 20%;
-    left: -12%;
+.cp-float-5 {
+    bottom: 14%;
+    left: -6%;
     animation-delay: 1.6s;
 }
 
-.android-float-6 {
-    bottom: 6%;
-    right: -10%;
+.cp-float-6 {
+    bottom: -2%;
+    right: -2%;
     animation-delay: 2s;
 }
 
-.android-float-7 {
-    bottom: -4%;
-    left: 30%;
-    animation-delay: 2.4s;
-}
-
 /* ==========================================
-   Trust logo strip
+   Logo / trust strip
    ========================================== */
-.android-logos-section {
+.cp-logos-section {
     padding: 56px 0;
     background: var(--bg-primary);
     border-bottom: 1px solid var(--border-color);
 }
 
-.android-logos-label {
+.cp-logos-label {
     text-align: center;
     font-size: 0.8125rem;
     font-weight: 600;
@@ -219,25 +226,25 @@
     margin-bottom: 2rem;
 }
 
-.android-logo-marquee {
+.cp-logo-marquee {
     overflow: hidden;
     -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
     mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
 }
 
-.android-logo-track {
+.cp-logo-track {
     display: flex;
     width: max-content;
     gap: 4.5rem;
     align-items: center;
-    animation: androidMarquee 28s linear infinite;
+    animation: cpMarquee 28s linear infinite;
 }
 
-.android-logo-marquee:hover .android-logo-track {
+.cp-logo-marquee:hover .cp-logo-track {
     animation-play-state: paused;
 }
 
-.android-logo-item {
+.cp-logo-item {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -250,16 +257,16 @@
     transition: var(--transition-normal);
 }
 
-.android-logo-item:hover {
+.cp-logo-item:hover {
     opacity: 1;
     color: var(--secondary-color);
 }
 
-.android-logo-item i {
+.cp-logo-item i {
     font-size: 1.5rem;
 }
 
-@keyframes androidMarquee {
+@keyframes cpMarquee {
     from {
         transform: translateX(0);
     }
@@ -270,27 +277,27 @@
 }
 
 /* ==========================================
-   Why choose CoxFuture (uses .service-card)
+   Why Choose CoxFuture (uses .service-card)
    ========================================== */
-.android-why-section {
+.cp-why-section {
     background: var(--bg-secondary);
 }
 
 /* ==========================================
    Process timeline (uses .re-process-steps / .re-circle)
    ========================================== */
-.android-process-section .re-process-steps {
+.cp-process-section .re-process-steps {
     margin-top: 3rem;
 }
 
-.android-process-section .re-process-step {
-    min-width: 120px;
+.cp-process-section .re-process-step {
+    min-width: 130px;
 }
 
 /* ==========================================
    Services grid
    ========================================== */
-.android-service-pill {
+.cp-service-pill {
     display: flex;
     align-items: flex-start;
     gap: 1rem;
@@ -302,13 +309,13 @@
     transition: var(--transition-normal);
 }
 
-.android-service-pill:hover {
+.cp-service-pill:hover {
     transform: translateY(-6px);
     box-shadow: var(--shadow-lg);
     border-color: var(--primary-color);
 }
 
-.android-service-pill .pill-icon {
+.cp-service-pill .pill-icon {
     flex-shrink: 0;
     width: 46px;
     height: 46px;
@@ -322,19 +329,19 @@
     transition: var(--transition-normal);
 }
 
-.android-service-pill:hover .pill-icon {
+.cp-service-pill:hover .pill-icon {
     background: var(--gradient-primary);
     color: #fff;
 }
 
-.android-service-pill h5 {
+.cp-service-pill h5 {
     font-size: 1.05rem;
     font-weight: 700;
     margin-bottom: 0.35rem;
     color: var(--text-primary);
 }
 
-.android-service-pill p {
+.cp-service-pill p {
     font-size: 0.875rem;
     color: var(--text-secondary);
     margin: 0;
@@ -342,34 +349,80 @@
 }
 
 /* ==========================================
-   Alternating features section
+   Technology stack grid
    ========================================== */
-.android-feature-row {
+.cp-tech-section {
+    background: var(--bg-secondary);
+}
+
+.cp-tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1.1rem;
+    margin-top: 3rem;
+}
+
+.cp-tech-item {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 1.5rem 0.85rem;
+    text-align: center;
+    transition: var(--transition-normal);
+}
+
+.cp-tech-item:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-color);
+}
+
+.cp-tech-item i {
+    font-size: 1.75rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.75rem;
+    display: block;
+}
+
+.cp-tech-item span {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* ==========================================
+   Alternating features
+   ========================================== */
+.cp-feature-row {
     margin-bottom: 5rem;
 }
 
-.android-feature-row:last-child {
+.cp-feature-row:last-child {
     margin-bottom: 0;
 }
 
-.android-feature-row .glass-card {
+.cp-feature-row .glass-card {
     max-width: 460px;
 }
 
-.android-feature-pair {
+.cp-feature-row.reverse .row {
+    flex-direction: row-reverse;
+}
+
+.cp-feature-pair {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
     margin-top: 1.5rem;
 }
 
-.android-feature-item {
+.cp-feature-item {
     display: flex;
     align-items: flex-start;
     gap: 1rem;
 }
 
-.android-feature-item .pill-icon {
+.cp-feature-item .pill-icon {
     flex-shrink: 0;
     width: 46px;
     height: 46px;
@@ -382,14 +435,14 @@
     font-size: 1.1rem;
 }
 
-.android-feature-item h5 {
+.cp-feature-item h5 {
     font-size: 1.05rem;
     font-weight: 700;
     margin-bottom: 0.25rem;
     color: var(--text-primary);
 }
 
-.android-feature-item p {
+.cp-feature-item p {
     font-size: 0.875rem;
     color: var(--text-secondary);
     margin: 0;
@@ -397,51 +450,45 @@
 }
 
 /* ==========================================
-   Technology stack grid
+   Why cross platform (split section)
    ========================================== */
-.android-tech-section {
-    background: var(--bg-secondary);
-}
-
-.android-tech-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 1.1rem;
-    margin-top: 3rem;
-}
-
-.android-tech-item {
+.cp-why-cp-section {
     background: var(--bg-primary);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-md);
-    padding: 1.5rem 0.85rem;
-    text-align: center;
-    transition: var(--transition-normal);
 }
 
-.android-tech-item:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--shadow-md);
-    border-color: var(--primary-color);
+.cp-why-cp-visual {
+    position: relative;
 }
 
-.android-tech-item i {
-    font-size: 1.75rem;
-    color: var(--secondary-color);
-    margin-bottom: 0.75rem;
-    display: block;
+.cp-why-cp-checklist {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem 1.5rem;
 }
 
-.android-tech-item span {
-    font-size: 0.8125rem;
-    font-weight: 600;
-    color: var(--text-primary);
+.cp-why-cp-checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 0.9375rem;
+}
+
+.cp-why-cp-checklist i {
+    color: var(--accent-color);
+    margin-top: 4px;
 }
 
 /* ==========================================
-   Android app types (hover cards)
+   Industries
    ========================================== */
-.android-apptype-card {
+.cp-industry-card {
     position: relative;
     background: var(--bg-primary);
     border: 1px solid var(--border-color);
@@ -453,7 +500,7 @@
     transition: var(--transition-normal);
 }
 
-.android-apptype-card::before {
+.cp-industry-card::before {
     content: '';
     position: absolute;
     inset: 0;
@@ -463,115 +510,83 @@
     z-index: 0;
 }
 
-.android-apptype-card:hover::before {
+.cp-industry-card:hover::before {
     opacity: 1;
 }
 
-.android-apptype-card i,
-.android-apptype-card span {
+.cp-industry-card i,
+.cp-industry-card span {
     position: relative;
     z-index: 1;
     transition: var(--transition-normal);
 }
 
-.android-apptype-card i {
+.cp-industry-card i {
     font-size: 1.9rem;
     color: var(--secondary-color);
     margin-bottom: 0.75rem;
     display: block;
 }
 
-.android-apptype-card span {
+.cp-industry-card span {
     font-size: 0.875rem;
     font-weight: 600;
     color: var(--text-primary);
 }
 
-.android-apptype-card:hover {
+.cp-industry-card:hover {
     transform: translateY(-8px);
     box-shadow: var(--shadow-lg);
 }
 
-.android-apptype-card:hover i,
-.android-apptype-card:hover span {
+.cp-industry-card:hover i,
+.cp-industry-card:hover span {
     color: #fff;
-}
-
-/* ==========================================
-   Why Android (split layout)
-   ========================================== */
-.android-why-mobile-section {
-    background: var(--bg-primary);
-}
-
-.android-benefits-checklist {
-    list-style: none;
-    padding: 0;
-    margin: 1.5rem 0 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.5rem 1.5rem;
-}
-
-.android-benefits-checklist li {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--border-color);
-    color: var(--text-secondary);
-    font-weight: 500;
-    font-size: 0.9375rem;
-}
-
-.android-benefits-checklist i {
-    color: var(--accent-color);
-    margin-top: 4px;
 }
 
 /* ==========================================
    Expertise / stats
    ========================================== */
-.android-expertise-section {
+.cp-expertise-section {
     background: var(--gradient-primary);
     position: relative;
     overflow: hidden;
 }
 
-.android-expertise-section::before {
+.cp-expertise-section::before {
     content: '';
     position: absolute;
     inset: 0;
     background: radial-gradient(circle at 85% 20%, rgba(255, 255, 255, 0.12), transparent 55%);
 }
 
-.android-expertise-section .section-label,
-.android-expertise-section .section-title,
-.android-expertise-section .section-description {
+.cp-expertise-section .section-label,
+.cp-expertise-section .section-title,
+.cp-expertise-section .section-description {
     color: #fff;
     position: relative;
 }
 
-.android-expertise-section .section-label::before {
+.cp-expertise-section .section-label::before {
     background: #fff;
 }
 
-.android-expertise-section .section-title {
+.cp-expertise-section .section-title {
     background: none;
     -webkit-text-fill-color: #fff;
 }
 
-.android-expertise-section .section-description {
+.cp-expertise-section .section-description {
     opacity: 0.85;
 }
 
-.android-stat-block {
+.cp-stat-block {
     position: relative;
     text-align: center;
     padding: 1rem;
 }
 
-.android-stat-block .stat-number {
+.cp-stat-block .stat-number {
     font-size: 3rem;
     font-weight: 800;
     font-family: var(--font-secondary);
@@ -579,7 +594,7 @@
     margin-bottom: 0.35rem;
 }
 
-.android-stat-block p {
+.cp-stat-block p {
     font-size: 0.9375rem;
     color: rgba(255, 255, 255, 0.8);
     margin: 0;
@@ -589,7 +604,7 @@
 /* ==========================================
    Case studies
    ========================================== */
-.android-case-card {
+.cp-case-card {
     background: var(--bg-primary);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-lg);
@@ -598,13 +613,13 @@
     transition: var(--transition-normal);
 }
 
-.android-case-card:hover {
+.cp-case-card:hover {
     transform: translateY(-8px);
     box-shadow: var(--shadow-xl);
     border-color: var(--primary-color);
 }
 
-.android-case-tag {
+.cp-case-tag {
     display: inline-block;
     padding: 5px 14px;
     border-radius: var(--radius-pill);
@@ -617,18 +632,18 @@
     margin-bottom: 1rem;
 }
 
-.android-case-card h4 {
+.cp-case-card h4 {
     font-size: 1.25rem;
     font-weight: 700;
     margin-bottom: 1rem;
     color: var(--text-primary);
 }
 
-.android-case-row {
+.cp-case-row {
     margin-bottom: 0.85rem;
 }
 
-.android-case-row span {
+.cp-case-row span {
     font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -638,99 +653,182 @@
     margin-bottom: 2px;
 }
 
-.android-case-row p {
+.cp-case-row p {
     font-size: 0.9rem;
     color: var(--text-secondary);
     margin: 0;
     line-height: 1.6;
 }
 
-.android-case-results {
+.cp-case-results {
     display: flex;
-    gap: 1.25rem;
+    gap: 1.5rem;
     margin-top: 1.5rem;
     padding-top: 1.5rem;
     border-top: 1px solid var(--border-color);
     flex-wrap: wrap;
 }
 
-.android-case-results .result-metric {
-    font-size: 1.4rem;
+.cp-case-results .result-metric {
+    font-size: 1.5rem;
     font-weight: 800;
     font-family: var(--font-secondary);
     color: var(--accent-color);
 }
 
-.android-case-results .result-label {
+.cp-case-results .result-label {
     font-size: 0.75rem;
     color: var(--text-muted);
     display: block;
 }
 
 /* ==========================================
-   Security & quality (icon cards)
+   Flutter vs React Native comparison
    ========================================== */
-.android-security-card {
+.cp-compare-section {
+    background: var(--bg-secondary);
+}
+
+.cp-compare-card {
     background: var(--bg-primary);
-    padding: 2rem;
-    border-radius: var(--radius-md);
     border: 1px solid var(--border-color);
-    text-align: center;
-    transition: all var(--transition-normal);
+    border-radius: var(--radius-lg);
+    padding: 2.25rem;
     height: 100%;
+    transition: var(--transition-normal);
+    position: relative;
+    overflow: hidden;
 }
 
-.android-security-card:hover {
-    transform: translateY(-8px);
+.cp-compare-card:hover {
+    transform: translateY(-6px);
     box-shadow: var(--shadow-lg);
+}
+
+.cp-compare-card .compare-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 1.5rem;
+}
+
+.cp-compare-card .compare-logo i {
+    width: 52px;
+    height: 52px;
+    border-radius: var(--radius-sm);
     background: var(--gradient-primary);
-}
-
-.android-security-card:hover * {
-    color: white !important;
-}
-
-.android-security-icon {
-    width: 60px;
-    height: 60px;
+    color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--gradient-primary);
-    border-radius: 50%;
-    font-size: 1.75rem;
-    color: white;
-    margin: 0 auto 1rem;
-    transition: all var(--transition-normal);
+    font-size: 1.4rem;
 }
 
-.android-security-card:hover .android-security-icon {
-    background: rgba(255, 255, 255, 0.2);
-}
-
-.android-security-card h4 {
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin-bottom: 0.6rem;
-}
-
-.android-security-card p {
-    font-size: 0.875rem;
+.cp-compare-card .compare-logo h3 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--text-primary);
     margin: 0;
+}
+
+.cp-compare-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+}
+
+.cp-compare-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.9375rem;
+    font-weight: 500;
     color: var(--text-secondary);
+}
+
+.cp-compare-list li:last-child {
+    border-bottom: none;
+}
+
+.cp-compare-list i {
+    color: var(--accent-color);
+}
+
+.cp-compare-tag {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: var(--radius-pill);
+    background: var(--bg-tertiary);
+    color: var(--secondary-color);
+    font-size: 0.8125rem;
+    font-weight: 700;
+}
+
+/* ==========================================
+   Security & Quality
+   ========================================== */
+.cp-quality-section {
+    background: var(--bg-primary);
+}
+
+.cp-quality-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    height: 100%;
+    transition: var(--transition-normal);
+}
+
+.cp-quality-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-color);
+}
+
+.cp-quality-card .pill-icon {
+    flex-shrink: 0;
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-sm);
+    background: var(--bg-tertiary);
+    color: var(--secondary-color);
+    font-size: 1.15rem;
+}
+
+.cp-quality-card h5 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+    color: var(--text-primary);
+}
+
+.cp-quality-card p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.6;
 }
 
 /* ==========================================
    FAQ (uses .re-faq accordion component)
    ========================================== */
-.android-faq-section {
+.cp-faq-section {
     background: var(--bg-secondary);
 }
 
 /* ==========================================
    Final CTA
    ========================================== */
-.android-final-cta {
+.cp-final-cta {
     position: relative;
     background: var(--gradient-premium);
     border-radius: var(--radius-xl);
@@ -739,14 +837,14 @@
     overflow: hidden;
 }
 
-.android-final-cta::before {
+.cp-final-cta::before {
     content: '';
     position: absolute;
     inset: 0;
     background: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.12), transparent 55%);
 }
 
-.android-final-cta h2 {
+.cp-final-cta h2 {
     position: relative;
     color: #fff;
     font-size: 2.5rem;
@@ -756,7 +854,7 @@
     -webkit-text-fill-color: #fff;
 }
 
-.android-final-cta p {
+.cp-final-cta p {
     position: relative;
     color: rgba(255, 255, 255, 0.85);
     max-width: 560px;
@@ -764,7 +862,7 @@
     font-size: 1.05rem;
 }
 
-.android-final-cta .cta-buttons {
+.cp-final-cta .cta-buttons {
     position: relative;
     display: flex;
     gap: 1rem;
@@ -772,22 +870,22 @@
     flex-wrap: wrap;
 }
 
-.android-final-cta .btn-primary {
+.cp-final-cta .btn-primary {
     background: #fff;
     color: var(--secondary-color);
 }
 
-.android-final-cta .btn-primary:hover {
+.cp-final-cta .btn-primary:hover {
     background: var(--bg-secondary);
     color: var(--secondary-color);
 }
 
-.android-final-cta .btn-outline-primary {
+.cp-final-cta .btn-outline-primary {
     color: #fff;
     border-color: rgba(255, 255, 255, 0.5);
 }
 
-.android-final-cta .btn-outline-primary:hover {
+.cp-final-cta .btn-outline-primary:hover {
     background: #fff;
     border-color: #fff;
     color: var(--secondary-color);
@@ -797,75 +895,62 @@
    Responsive
    ========================================== */
 @media (max-width: 991px) {
-    .android-hero-title {
-        font-size: 2.4rem;
+    .cp-hero-title {
+        font-size: 2.5rem;
     }
 
-    .android-hero-visual {
+    .cp-hero-visual {
         height: 380px;
         margin-top: 3rem;
     }
 
-    .android-phone {
-        width: 190px;
-        height: 380px;
-    }
-
-    .android-feature-row .row {
+    .cp-feature-row .row {
         flex-direction: column-reverse;
         gap: 2rem;
     }
 
-    .android-benefits-checklist {
+    .cp-feature-row.reverse .row {
+        flex-direction: column-reverse;
+    }
+
+    .cp-why-cp-checklist {
         grid-template-columns: 1fr;
     }
 }
 
 @media (max-width: 767px) {
-    .android-hero {
+    .cp-hero {
         padding: 130px 0 70px;
         text-align: center;
     }
 
-    .android-hero-description {
+    .cp-hero-description {
         margin-left: auto;
         margin-right: auto;
     }
 
-    .android-hero-highlights,
-    .android-hero-buttons {
+    .cp-hero-features,
+    .cp-hero-buttons {
         justify-content: center;
     }
 
-    .android-hero-visual {
-        height: 320px;
+    .cp-hero-visual {
+        height: 300px;
     }
 
-    .android-phone {
-        width: 160px;
-        height: 320px;
-    }
-
-    .android-float {
+    .cp-float {
         display: none;
     }
 
-    .android-float-7 {
-        display: flex;
-        position: static;
-        margin: 1rem auto 0;
-        width: fit-content;
-    }
-
-    .android-stat-block .stat-number {
+    .cp-stat-block .stat-number {
         font-size: 2.25rem;
     }
 
-    .android-final-cta {
+    .cp-final-cta {
         padding: 3rem 1.5rem;
     }
 
-    .android-final-cta h2 {
+    .cp-final-cta h2 {
         font-size: 1.85rem;
     }
 }
