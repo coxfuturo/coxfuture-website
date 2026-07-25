@@ -1,10 +1,5 @@
 /* ==========================================
-   International iOS App Development Service Page
-   Page-specific styles only.
-   Built entirely on existing tokens from variables.css
-   (colors, radius, shadow, transitions, fonts).
-   Does not redefine or override any existing selectors,
-   global CSS, navbar, footer or theme.
+   International iOS App Development
    ========================================== */
 
 .ios-page .section-padding {
@@ -523,6 +518,10 @@
 
 .ios-why-ios-visual {
     position: relative;
+}
+
+.ios-why-ios-visual img{
+    aspect-ratio: 5/5;
 }
 
 .ios-why-ios-checklist {
