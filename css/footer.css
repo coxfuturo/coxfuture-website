@@ -367,12 +367,12 @@ hr {
 }
 
 .footer-widget {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .footer-logo {
     font-family: var(--font-secondary);
-    font-size: 1.75rem;
+    font-size: 1.3rem;
     font-weight: 800;
     display: flex;
     align-items: center;
@@ -384,6 +384,8 @@ hr {
 .footer-description {
     color: var(--text-primary);
     margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    max-width: 300px;
 }
 
 .footer-social {
@@ -408,10 +410,10 @@ hr {
 }
 
 .footer-widget h4 {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     font-weight: 700;
     color: var(--secondary-color);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .footer-links {
@@ -420,12 +422,13 @@ hr {
 }
 
 .footer-links li {
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
 }
 
 .footer-links a {
     color: var(--text-primary);
     transition: var(--transition-normal);
+    font-size: 0.9rem;
 }
 
 .footer-links a:hover {
@@ -461,8 +464,12 @@ hr {
 
 .footer-bottom {
     margin-top: 1rem;
-    padding-top: 1rem;
+    padding: 0.2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p{
+    font-size: small;
 }
 
 .copyright {
@@ -474,7 +481,8 @@ hr {
     list-style: none;
     display: flex;
     gap: 2rem;
-    justify-content: flex-end;
+    font-size: small;
+    justify-content: end;
     margin: 0;
     padding: 0;
 }

@@ -339,7 +339,6 @@ if (contactForm) {
             })
                 .then(response => response.text())
                 .then(data => {
-                    console.log(data);
                     if (data.trim() === "success") {
 
                         showNotification(
@@ -736,11 +735,6 @@ if ('IntersectionObserver' in window) {
 // Performance Monitoring
 // ==========================================
 window.addEventListener('load', () => {
-    // Log page load time
-    const loadTime = window.performance.timing.domContentLoadedEventEnd -
-        window.performance.timing.navigationStart;
-    console.log(`Page loaded in ${loadTime}ms`);
-
     // Add loaded class to body
     document.body.classList.add('loaded');
 });
@@ -760,7 +754,6 @@ document.addEventListener('keydown', (e) => {
     // Ctrl/Cmd + K for quick actions (placeholder)
     if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
         e.preventDefault();
-        console.log('Quick actions shortcut triggered');
     }
 });
 
@@ -921,17 +914,6 @@ function initHeroBanner() {
 // ==========================================
 if ('serviceWorker' in navigator) {
     // Uncomment to enable service worker for PWA
-    /*
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js')
-            .then(registration => {
-                console.log('Service Worker registered:', registration);
-            })
-            .catch(error => {
-                console.log('Service Worker registration failed:', error);
-            });
-    });
-    */
 }
 
 // ==========================================
@@ -939,9 +921,6 @@ if ('serviceWorker' in navigator) {
 // ==========================================
 function trackEvent(category, action, label) {
     // Placeholder for analytics tracking
-    console.log('Event tracked:', { category, action, label });
-
-
     // Integrate with Google Analytics, Mixpanel, etc.
     /*
     if (typeof gtag !== 'undefined') {
