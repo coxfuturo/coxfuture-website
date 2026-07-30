@@ -48,25 +48,7 @@ const handleNavbarScroll = () => {
     }
 };
 
-const activateNavLink = () => {
-    if (!sections.length || !navLinks.length) return;
-    let currentSection = '';
-    const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
 
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (scrollPos >= (sectionTop - 100)) {
-            currentSection = section.getAttribute('id');
-        }
-    });
-
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${currentSection}`) {
-            link.classList.add('active');
-        }
-    });
-};
 
 const handleScrollTopBtn = () => {
     if (!scrollTopBtn) return;
@@ -100,7 +82,6 @@ const revealTimeline = () => {
 // Single throttled scroll event listener
 const onScroll = () => {
     handleNavbarScroll();
-    activateNavLink();
     handleScrollTopBtn();
     handleParallax();
     revealTimeline();
@@ -727,10 +708,6 @@ document.addEventListener('click', (e) => {
 });
 
 // ==========================================
-// Parallax Effect for Hero Section (Moved to unified handler)
-// ==========================================
-
-// ==========================================
 // Lazy Loading Images
 // ==========================================
 if ('IntersectionObserver' in window) {
@@ -890,7 +867,6 @@ if (document.readyState === 'loading') {
 }
 
 function initializeApp() {
-    console.log('CoxFuture website initialized successfully!');
 
     // Initialize the dynamic hero background banner slideshow
     initHeroBanner();
@@ -1044,6 +1020,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+
     /* ==========================================
        2. Life At CoxFuture — Gallery Lightbox
        ========================================== */
@@ -1121,6 +1098,7 @@ document.addEventListener('DOMContentLoaded', function () {
     /* ==========================================
        4. Career Application Form — Client-Side Validation
        ========================================== */
+       console.log("JS Loaded");
     const applicationForm = document.getElementById('careerApplicationForm');
 
     if (applicationForm) {
@@ -1182,28 +1160,62 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             // Simulate successful submission (no backend wired up in this template)
-            const submitBtn = applicationForm.querySelector('button[type="submit"]');
-            const originalHTML = submitBtn ? submitBtn.innerHTML : '';
+            const submitBtn = applicationForm.querySelector("button[type='submit']");
+            const originalText = submitBtn.innerHTML;
 
-            if (submitBtn) {
-                submitBtn.disabled = true;
-                submitBtn.innerHTML = '<span>Submitting...</span> <i class="fas fa-spinner fa-spin"></i>';
-            }
+            submitBtn.disabled = true;
+            submitBtn.innerHTML =
+                '<span>Submitting...</span> <i class="fas fa-spinner fa-spin"></i>';
 
-            setTimeout(function () {
-                if (typeof showNotification === 'function') {
-                    showNotification('Application submitted successfully! We will get back to you soon.', 'success');
-                }
-                applicationForm.reset();
-                if (resumeFileName) resumeFileName.textContent = 'No file selected';
-                applicationForm.querySelectorAll('.has-error').forEach(function (group) {
-                    group.classList.remove('has-error');
-                });
-                if (submitBtn) {
+            const formData = new FormData(applicationForm);
+
+            fetch(applicationForm.action, {
+                method: "POST",
+                body: formData
+            })
+                .then(response => response.text())
+                .then(data => {
+
+                    if (data.trim() === "success") {
+
+                        showNotification(
+                            "Application submitted successfully!",
+                            "success"
+                        );
+
+                        applicationForm.reset();
+
+                        if (resumeFileName) {
+                            resumeFileName.textContent = "No file selected";
+                        }
+
+                        applicationForm.querySelectorAll('.has-error').forEach(group => {
+                            group.classList.remove('has-error');
+                        });
+
+                    } else {
+
+                        showNotification(data, "error");
+
+                    }
+
+                })
+                .catch(error => {
+
+                    console.error(error);
+
+                    showNotification(
+                        "Something went wrong. Please try again.",
+                        "error"
+                    );
+
+                })
+                .finally(() => {
+
                     submitBtn.disabled = false;
-                    submitBtn.innerHTML = originalHTML;
-                }
-            }, 1200);
+                    submitBtn.innerHTML = originalText;
+
+                });
         });
 
         // Clear error state as the user corrects a field
