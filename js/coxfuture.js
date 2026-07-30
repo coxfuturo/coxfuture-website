@@ -1077,6 +1077,7 @@ document.addEventListener('DOMContentLoaded', function () {
     /* ==========================================
        4. Career Application Form — Client-Side Validation
        ========================================== */
+       console.log("JS Loaded");
     const applicationForm = document.getElementById('careerApplicationForm');
 
     if (applicationForm) {
