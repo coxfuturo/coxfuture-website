@@ -1,143 +1,185 @@
 /**
- * CoxFuture - Blog Interactivity
+ * CoxFuture Technologies - Blog & Blog Details Interactive Logic
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Search Functionality
-    const searchInput = document.getElementById('blogSearch');
-    const blogCards = document.querySelectorAll('.blog-card-container');
+    initSearchAndFilter();
+    initCategoryCards();
+    initTableOfContents();
+    initShareButtons();
+    initNewsletterForm();
+});
+
+/**
+ * Real-time Search and Category Filtering
+ */
+function initSearchAndFilter() {
+    const searchInput = document.getElementById('blogSearchInput');
+    const filterPills = document.querySelectorAll('.filter-pill');
+    const blogCards = document.querySelectorAll('.latest-articles-section .blog-card-wrapper, .blog-row > div');
+    const noResultsMsg = document.getElementById('noResultsMessage');
+
+    if (!blogCards.length) return;
+
+    let currentCategory = 'all';
+    let currentSearchQuery = '';
+
+    function filterGrid() {
+        let visibleCount = 0;
+
+        blogCards.forEach(cardWrapper => {
+            const card = cardWrapper.classList.contains('blog-card') ? cardWrapper : cardWrapper.querySelector('.blog-card');
+            if (!card) return;
+
+            const title = (card.querySelector('h3, h4')?.textContent || '').toLowerCase();
+            const desc = (card.querySelector('p')?.textContent || '').toLowerCase();
+            const category = (card.querySelector('.category-tag')?.getAttribute('data-category-slug') || card.querySelector('.category-tag')?.textContent || '').toLowerCase();
+
+            const matchesCategory = (currentCategory === 'all') || 
+                                    (category.includes(currentCategory.toLowerCase())) || 
+                                    (currentCategory === 'latest' && visibleCount < 6) ||
+                                    (currentCategory === 'popular' && cardWrapper.dataset.popular === 'true');
+
+            const matchesSearch = title.includes(currentSearchQuery) || desc.includes(currentSearchQuery);
+
+            if (matchesCategory && matchesSearch) {
+                cardWrapper.style.display = 'block';
+                visibleCount++;
+            } else {
+                cardWrapper.style.display = 'none';
+            }
+        });
+
+        if (noResultsMsg) {
+            noResultsMsg.style.display = (visibleCount === 0) ? 'block' : 'none';
+        }
+    }
 
     if (searchInput) {
         searchInput.addEventListener('input', (e) => {
-            const searchTerm = e.target.value.toLowerCase().trim();
-
-            blogCards.forEach(card => {
-                const title = card.querySelector('.blog-card h3').textContent.toLowerCase();
-                const category = card.querySelector('.category-tag').textContent.toLowerCase();
-                const excerpt = card.querySelector('.blog-card p').textContent.toLowerCase();
-
-                if (title.includes(searchTerm) || category.includes(searchTerm) || excerpt.includes(searchTerm)) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
+            currentSearchQuery = e.target.value.trim().toLowerCase();
+            filterGrid();
         });
     }
 
-    // 2. Category Sidebar Links Filtering
-    const categoryLinks = document.querySelectorAll('.category-list a[data-category]');
+    if (filterPills.length) {
+        filterPills.forEach(pill => {
+            pill.addEventListener('click', (e) => {
+                e.preventDefault();
+                filterPills.forEach(p => p.classList.remove('active'));
+                pill.classList.add('active');
+                currentCategory = pill.getAttribute('data-category') || 'all';
+                filterGrid();
+            });
+        });
+    }
+}
 
-    categoryLinks.forEach(link => {
+/**
+ * Category Card Clicks on main blog page
+ */
+function initCategoryCards() {
+    const categoryCards = document.querySelectorAll('.category-card');
+    const filterPills = document.querySelectorAll('.filter-pill');
+
+    categoryCards.forEach(card => {
+        card.addEventListener('click', (e) => {
+            const categoryFilter = card.getAttribute('data-category-filter');
+            if (!categoryFilter) return;
+
+            const targetPill = Array.from(filterPills).find(pill => pill.getAttribute('data-category') === categoryFilter);
+            if (targetPill) {
+                targetPill.click();
+                const articlesSection = document.getElementById('latest-articles');
+                if (articlesSection) {
+                    articlesSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+    });
+}
+
+/**
+ * Table of Contents (TOC) for blog-details.html
+ */
+function initTableOfContents() {
+    const tocLinks = document.querySelectorAll('.toc-list a');
+    const articleHeadings = document.querySelectorAll('.article-body h2, .article-body h3');
+
+    if (!tocLinks.length || !articleHeadings.length) return;
+
+    // Smooth scroll
+    tocLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
-
-            categoryLinks.forEach(l => l.classList.remove('active'));
-            link.classList.add('active');
-
-            const selectedCategory = link.getAttribute('data-category');
-
-            if (selectedCategory === 'all') {
-                blogCards.forEach(card => card.style.display = 'block');
-            } else {
-                blogCards.forEach(card => {
-                    const cardCategory = card.querySelector('.category-tag').getAttribute('data-category-slug');
-                    if (cardCategory === selectedCategory) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
+            const targetId = link.getAttribute('href').replace('#', '');
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
             }
         });
     });
 
-    // 3. Category Grid Cards Filtering
-    const categoryGridCards = document.querySelectorAll('.category-card[data-category-filter]');
-    categoryGridCards.forEach(card => {
-        card.addEventListener('click', (e) => {
-            const filterSlug = card.getAttribute('data-category-filter');
-            const targetSidebarLink = document.querySelector(`.category-list a[data-category="${filterSlug}"]`);
-            if (targetSidebarLink) {
-                targetSidebarLink.click();
-            } else {
-                blogCards.forEach(c => {
-                    const cardCategory = c.querySelector('.category-tag').getAttribute('data-category-slug');
-                    if (cardCategory === filterSlug) {
-                        c.style.display = 'block';
-                    } else {
-                        c.style.display = 'none';
-                    }
-                });
-            }
-        });
-    });
-
-    // 4. Table of Contents Scroll Spy (for blog-details.html)
-    const tocLinks = document.querySelectorAll('.toc-widget a');
-    const sections = Array.from(document.querySelectorAll('.article-body h2, .article-body h3'));
-
-    if (tocLinks.length > 0 && sections.length > 0) {
-        sections.forEach((sec, idx) => {
-            if (!sec.id) {
-                const text = sec.textContent.trim().toLowerCase().replace(/[^a-z0-9]+/g, '-');
-                sec.id = text || `section-${idx}`;
+    // ScrollSpy active link update
+    window.addEventListener('scroll', () => {
+        let currentActiveId = '';
+        articleHeadings.forEach(heading => {
+            const headingTop = heading.getBoundingClientRect().top;
+            if (headingTop <= 140) {
+                currentActiveId = heading.id;
             }
         });
 
-        tocLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                const targetId = link.getAttribute('href').substring(1);
-                const targetEl = document.getElementById(targetId);
-
-                if (targetEl) {
-                    e.preventDefault();
-                    window.scrollTo({
-                        top: targetEl.offsetTop - 120,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-
-            sections.forEach(sec => {
-                const sectionTop = sec.offsetTop;
-                if (window.scrollY >= sectionTop - 150) {
-                    current = sec.getAttribute('id');
-                }
-            });
-
+        if (currentActiveId) {
             tocLinks.forEach(link => {
                 link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
+                if (link.getAttribute('href') === `#${currentActiveId}`) {
                     link.classList.add('active');
                 }
             });
-        });
-    }
+        }
+    });
+}
 
-    // 5. Copy Link to Clipboard
-    const copyLinkBtn = document.getElementById('copyLinkBtn');
-    if (copyLinkBtn) {
-        copyLinkBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            navigator.clipboard.writeText(window.location.href).then(() => {
-                const originalHTML = copyLinkBtn.innerHTML;
-                copyLinkBtn.innerHTML = '<i class="fas fa-check"></i>';
-                copyLinkBtn.style.color = 'var(--accent-color)';
-                copyLinkBtn.style.borderColor = 'var(--accent-color)';
+/**
+ * Share Buttons Feedback (Copy link to clipboard)
+ */
+function initShareButtons() {
+    const copyBtn = document.getElementById('copyArticleLinkBtn');
+    if (!copyBtn) return;
 
-                setTimeout(() => {
-                    copyLinkBtn.innerHTML = originalHTML;
-                    copyLinkBtn.style.color = '';
-                    copyLinkBtn.style.borderColor = '';
-                }, 2000);
-            }).catch(err => {
-                console.error('Failed to copy: ', err);
-            });
+    copyBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        navigator.clipboard.writeText(window.location.href).then(() => {
+            const originalTitle = copyBtn.getAttribute('title');
+            copyBtn.setAttribute('title', 'Copied!');
+            copyBtn.style.background = '#10b981';
+            copyBtn.style.color = '#ffffff';
+
+            setTimeout(() => {
+                copyBtn.setAttribute('title', originalTitle);
+                copyBtn.style.background = '';
+                copyBtn.style.color = '';
+            }, 2000);
+        }).catch(err => {
+            console.error('Failed to copy link: ', err);
         });
-    }
-});
+    });
+}
+
+/**
+ * Newsletter Form Interactive Feedback
+ */
+function initNewsletterForm() {
+    const form = document.querySelector('.newsletter-form');
+    if (!form) return;
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const input = form.querySelector('input[type="email"]');
+        if (input && input.value) {
+            alert(`Thank you for subscribing to CoxFuture Insights! We've registered ${input.value}.`);
+            input.value = '';
+        }
+    });
+}
