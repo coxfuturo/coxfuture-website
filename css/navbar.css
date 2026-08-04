@@ -142,25 +142,36 @@
     font-size: 0.9rem;
 }
 
-/* Homepage Transparent Navbar */
-.home-page .navbar:not(.scrolled) .nav-link {
-    color: var(--text-light) !important;
+/* Homepage & Blog Page Transparent Navbar */
+.home-page .navbar:not(.scrolled) .nav-link,
+.blog-page .navbar:not(.scrolled) .nav-link {
+    color: var(--text-light, #ffffff) !important;
 }
 
 .home-page .navbar:not(.scrolled) .nav-link:hover,
-.home-page .navbar:not(.scrolled) .nav-link.active {
+.home-page .navbar:not(.scrolled) .nav-link.active,
+.blog-page .navbar:not(.scrolled) .nav-link:hover,
+.blog-page .navbar:not(.scrolled) .nav-link.active {
     color: var(--primary-color) !important;
 }
 
-.home-page .navbar:not(.scrolled) .navbar-brand {
+.home-page .navbar:not(.scrolled) .navbar-brand,
+.blog-page .navbar:not(.scrolled) .navbar-brand {
     color: #ffffff !important;
 }
 
-.home-page .navbar:not(.scrolled) .navbar-toggler-icon i {
+.home-page .navbar:not(.scrolled) .navbar-toggler-icon i,
+.blog-page .navbar:not(.scrolled) .navbar-toggler-icon i {
     color: #ffffff !important;
 }
 
-.home-page .navbar:not(.scrolled) .logo {
+.home-page .navbar:not(.scrolled) .navbar-toggler-icon .bar,
+.blog-page .navbar:not(.scrolled) .navbar-toggler-icon .bar {
+    background-color: #ffffff !important;
+}
+
+.home-page .navbar:not(.scrolled) .logo,
+.blog-page .navbar:not(.scrolled) .logo {
     filter: brightness(0) invert(1) drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
 }
 
