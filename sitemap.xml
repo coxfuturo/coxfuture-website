@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://coxfuture.com/</loc>
+  </url>
+
+  <!-- Main Pages -->
+  <url>
+    <loc>https://coxfuture.com/pages/about.html</loc>
+  </url>
+  <url>
+    <loc>https://coxfuture.com/pages/career.html</loc>
+  </url>
+  <url>
+    <loc>https://coxfuture.com/pages/contact.html</loc>
+  </url>
+  <url>
+    <loc>https://coxfuture.com/pages/privacyPolicy.html</loc>
+  </url>
+  <url>
+    <loc>https://coxfuture.com/pages/projects.html</loc>
+  </url>
+  <url>
+    <loc>https://coxfuture.com/pages/team.html</loc>
+  </url>
+  <url>
+    <loc>https://coxfuture.com/pages/terms.html</loc>
+  </url>
+
+  <!-- Services -->
+  <url>
+    <loc>https://coxfuture.com/services/services.html</loc>
+  </url>
+  <url>
+    <loc>https://coxfuture.com/services/androidDevelopment.html</loc>
+  </url>
+  <url>
+    <loc>https://coxfuture.com/services/iosDevelopment.html</loc>
+  </url>
+  <url>
+    <loc>https://coxfuture.com/services/mobileDevelopment.html</loc>
+  </url>
+  <url>
+    <loc>https://coxfuture.com/services/webDevelopment.html</loc>
+  </url>
+  <url>
+    <loc>https://coxfuture.com/services/software.html</loc>
+  </url>
+  <url>
+    <loc>https://coxfuture.com/services/seo.html</loc>
+  </url>
+  <url>
+    <loc>https://coxfuture.com/services/growthHacking.html</loc>
+  </url>
+  <url>
+    <loc>https://coxfuture.com/services/pricing.html</loc>
+  </url>
+
+  <!-- Domestic Services -->
+  <url>
+    <loc>https://coxfuture.com/services/domestic/GMB.html</loc>
+  </url>
+  <url>
+    <loc>https://coxfuture.com/services/domestic/mobileApp.html</loc>
+  </url>
+  <url>
+    <loc>https://coxfuture.com/services/domestic/saas.html</loc>
+  </url>
+  <url>
+    <loc>https://coxfuture.com/services/domestic/seo.html</loc>
+  </url>
+  <url>
+    <loc>https://coxfuture.com/services/domestic/software.html</loc>
+  </url>
+  <url>
+    <loc>https://coxfuture.com/services/domestic/webDevelopment.html</loc>
+  </url>
+
+  <!-- Industries -->
+  <url>
+    <loc>https://coxfuture.com/industries/Astrology.html</loc>
+  </url>
+  <url>
+    <loc>https://coxfuture.com/industries/E-Learning.html</loc>
+  </url>
+  <url>
+    <loc>https://coxfuture.com/industries/eCommerce.html</loc>
+  </url>
+  <url>
+    <loc>https://coxfuture.com/industries/foodApp.html</loc>
+  </url>
+  <url>
+    <loc>https://coxfuture.com/industries/healthCare.html</loc>
+  </url>
+  <url>
+    <loc>https://coxfuture.com/industries/politics.html</loc>
+  </url>
+  <url>
+    <loc>https://coxfuture.com/industries/real_estate.html</loc>
+  </url>
+  <url>
+    <loc>https://coxfuture.com/industries/travel.html</loc>
+  </url>
+
+</urlset>
