@@ -897,6 +897,7 @@
     transition: transform var(--transition-slow);
 }
 
+
 .team-card:hover .team-card-img {
     transform: scale(1.05);
 }
