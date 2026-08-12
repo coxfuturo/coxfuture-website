@@ -209,6 +209,7 @@ body.dark-mode .blog-search-box .search-icon {
 
 /* Title */
 
+.blog-content h3,
 .blog-content h4{
     font-size:22px;
     font-weight:700;
@@ -218,6 +219,7 @@ body.dark-mode .blog-search-box .search-icon {
     transition:.3s;
 }
 
+.blog-card:hover h3,
 .blog-card:hover h4{
     color:#0d6efd;
 }
