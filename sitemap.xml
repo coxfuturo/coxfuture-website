@@ -104,4 +104,12 @@
     <loc>https://coxfuture.com/industries/travel.html</loc>
   </url>
 
+  <!-- Blog Articles -->
+  <url>
+    <loc>https://coxfuture.com/Blog/coxfuture-blog-article.html</loc>
+  </url>
+  <url>
+    <loc>https://coxfuture.com/Blog/how-to-get-your-website-on-google.html</loc>
+  </url>
+
 </urlset>

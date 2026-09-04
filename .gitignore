@@ -1,0 +1,4 @@
+/vendor/
+config.php
+.env
+google-test.php
