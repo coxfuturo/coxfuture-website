@@ -185,6 +185,15 @@ img {
     max-width: 650px;
 }
 
+/* Gradient divider used under section titles (FAQ, testimonials, etc.) */
+.title-underline {
+    width: 64px;
+    height: 3px;
+    border-radius: var(--radius-pill);
+    background: var(--gradient-premium);
+    margin-bottom: 1.25rem;
+}
+
 .section-descriptions {
     color: var(--bg-primary);
 }
