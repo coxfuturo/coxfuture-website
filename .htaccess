@@ -1,0 +1,15 @@
+# CoxFuture SEO redirects
+# The article directory on disk is /Blog (capital B). Requests to the
+# lowercase /blog/... path (and the old how-long-does-seo-take.html name)
+# used to return the homepage with a 200, which search engines treated as
+# non-canonical pages in the sitemap. 301 them to the canonical URLs.
+
+RewriteEngine On
+
+# /blog/<page>.html -> /Blog/<page>.html (only when the request itself is lowercase)
+RewriteCond %{THE_REQUEST} \s/blog/
+RewriteRule ^blog/(.*)$ /Blog/$1 [R=301,L]
+
+# Old article filename -> current filename
+RewriteCond %{THE_REQUEST} \s/Blog/how-long-does-seo-take\.html
+RewriteRule ^Blog/how-long-does-seo-take\.html$ /Blog/how-long-does-seo-take-to-work.html [R=301,L]

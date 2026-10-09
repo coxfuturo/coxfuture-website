@@ -40,10 +40,11 @@
 ]}
 </script></head>
 <body><div class="progress" id="progress"></div>
-<main>
+ 
  <!-- Navigation -->
     <header>
-        <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+        <nav class="navbar navbar-expand-lg fixed-top" id="mainNav"
+    aria-label="Main navigation">
             <div class="container-fluid px-3">
                 <a class="navbar-brand" href="../coxfuture.html">
                     <img src="../img/logo.png" alt="CoxFuture Logo" class="logo img-fluid">
@@ -55,7 +56,9 @@
                         <span class="bar"></span>
                     </span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="collapse navbar-collapse" id="navbarNav"
+    role="navigation"
+    aria-label="Main navigation">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
                             <a class="nav-link" href="../coxfuture.html">Home</a>
@@ -240,7 +243,9 @@
             </div>
         </nav>
     </header>
-<main>
+
+      <main id="main-content">
+ 
 <section class="page-hero article-page-hero"><div class="container"><nav aria-label="Breadcrumb" class="breadcrumb-trail"><a href="https://coxfuture.com/">Home</a><i class="fas fa-chevron-right"></i><a href="https://coxfuture.com/blog.html">Blog</a><i class="fas fa-chevron-right"></i><span>SEO vs PPC</span></nav><span class="section-label">Digital marketing</span><h1 class="section-title">SEO vs PPC: Which Is Better for Your Business?</h1><p class="section-description">An honest comparison of cost, speed, ROI and risk, plus a simple framework to pick the right channel for your stage, or combine both.</p><div class="byline"><span>CoxFuture Editorial Team</span><i class="dot"></i><span>05 October 2026</span><i class="dot"></i><span>10 min read</span></div></div></section>
 <div class="wrap layout"><aside class="side"><div class="side-inner"><h2>On this page</h2><nav aria-label="Table of contents" class="toc"><a class="active" href="#short">The short answer</a><a href="#what">What SEO and PPC are</a><a href="#compare">Side-by-side comparison</a><a href="#cost">Cost and ROI over time</a><a href="#choose">Which should you choose?</a><a href="#both">Using both together</a><a href="#mistakes">Common mistakes</a><a href="#measure">Metrics to track</a></nav></div></aside>
 <article id="article"><figure class="featured"><img alt="SEO versus PPC comparison" fetchpriority="high" height="800" src="../img/Blog_img/SEO vs PPC_ Grow Smarter.png" width="1400"/><figcaption>PPC rents attention. SEO builds an asset.</figcaption></figure>
@@ -411,8 +416,12 @@
 </div></section>
 
 <section class="wrap author"><div class="authorbox"><div class="author-logo"><img src="../img/CoxFuture_logo.jpg" alt="CoxFuture logo"></div><div><small>Written by</small><h2>CoxFuture Editorial Team</h2><p>Expert contributors in software development, web development, and digital solutions. CoxFuture Technologies helps businesses build digital products designed for growth.</p></div></div></section>
-</main>
+ 
  <!-- Footer -->
+    </main>
+
+    <!-- Footer -->
+
     <footer class="footer">
         <div class="container-fluid px-5">
             <div class="row g-2">
@@ -504,9 +513,10 @@
                             <li>
                                 <div class="d-flex align-items-center gap-3">
                                     <i class="fas fa-envelope"></i>
-                                    <a href="mailto:info@coxfuture.com">
-                                        info@coxfuture.com
-                                    </a>
+                                    <a href="mailto:info@coxfuture.com"
+   aria-label="Email info@coxfuture.com (opens your email app)">
+  info@coxfuture.com
+</a>
                                 </div>
                             </li>
 
@@ -534,7 +544,7 @@
             </div>
         </div>
     </footer>
-</main>
+ 
 <button aria-label="Scroll to top" class="scroll-to-top" id="scrollTopBtn"><i class="fa-solid fa-arrow-up"></i></button>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../js/coxfuture.js"></script>

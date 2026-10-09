@@ -38,10 +38,11 @@
 </head>
 
 <body class="blog-page">
-<main>
+ 
     <!-- Navigation -->
     <header>
-        <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+        <nav class="navbar navbar-expand-lg fixed-top" id="mainNav"
+    aria-label="Main navigation">
             <div class="container-fluid px-3">
                 <a class="navbar-brand" href="./coxfuture.html">
                     <img src="../img/logo.png" alt="CoxFuture Logo" class="logo img-fluid">
@@ -53,7 +54,9 @@
                         <span class="bar"></span>
                     </span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="collapse navbar-collapse" id="navbarNav"
+    role="navigation"
+    aria-label="Main navigation">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
                             <a class="nav-link" href="./coxfuture.html">Home</a>
@@ -238,6 +241,8 @@
             </div>
         </nav>
     </header>
+
+      <main id="main-content">
 
     <!-- 1. Hero Banner Section -->
     <section class="portfolio-hero">
@@ -593,7 +598,10 @@
 </div>
 </div>
 
+    </main>
+
     <!-- Footer -->
+
     <footer class="footer">
         <div class="container-fluid px-5">
             <div class="row g-2">
@@ -691,7 +699,7 @@
             </div>
         </div>
     </footer>
-</main>
+ 
     <!-- Scroll to Top Button -->
     <button class="scroll-to-top" id="scrollTopBtn" aria-label="Scroll to top">
         <i class="fas fa-arrow-up"></i>

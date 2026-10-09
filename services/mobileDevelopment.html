@@ -35,8 +35,8 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/app.css">
-    <!-- Page-specific styles for the Mobile App Development page (does not modify app.css / theme) -->
-    <link rel="stylesheet" href="../css/mobile.css">
+    <!-- Page-specific styles for the Cross Platform App Development page -->
+    <link rel="stylesheet" href="../css/crossplatform.css">
     <!-- Canonical URL -->
     <link rel="canonical" href="https://coxfuture.com/services/mobileDevelopment.html">
     <script type="application/ld+json">
@@ -56,10 +56,11 @@
 </head>
 
 <body class="cp-page">
-<main>
+ 
     <!-- Navigation -->
     <header>
-        <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+        <nav class="navbar navbar-expand-lg fixed-top" id="mainNav"
+    aria-label="Main navigation">
             <div class="container-fluid px-3">
                 <a class="navbar-brand" href="../coxfuture.html">
                     <img src="../img/logo.png" alt="CoxFuture Logo" class="logo img-fluid">
@@ -71,7 +72,9 @@
                         <span class="bar"></span>
                     </span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="collapse navbar-collapse" id="navbarNav"
+    role="navigation"
+    aria-label="Main navigation">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
                             <a class="nav-link" href="../coxfuture.html">Home</a>
@@ -256,6 +259,8 @@
             </div>
         </nav>
     </header>
+
+      <main id="main-content">
 
     <!-- ============ HERO ============ -->
     <section class="cp-hero">
@@ -1228,10 +1233,10 @@
                                         and iOS from one codebase, on time and on budget. The performance is
                                         genuinely native."</p>
                                     <div class="testimonial-author">
-                                        <img src="../img/avater1.png" alt="Client photo">
+                                        <img src="../img/clientpic.jpg" alt="Client" loading="lazy">
                                         <div class="author-info">
-                                            <h5>Carlos Mendes</h5>
-                                            <p>Founder, On-Demand Platform · Brazil</p>
+                                            <h5>Rahul Sharma</h5>
+                                            <p>CEO, Tech Industries</p>
                                             <div class="rating">
                                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                                             </div>
@@ -1244,12 +1249,12 @@
                                     <i class="fas fa-quote-left quote-icon"></i>
                                     <p class="testimonial-text">"Maintaining one codebase instead of two cut our release cycle in half, and users can't tell it isn't a fully native app across all devices and platforms."</p>
                                     <div class="testimonial-author">
-                                        <img src="../img/avater2.png" alt="Client photo">
+                                        <img src="../img/simran.jpg" alt="Client" loading="lazy">
                                         <div class="author-info">
-                                            <h5>Priya Nair</h5>
-                                            <p>CTO, Fintech Startup · Singapore Region</p>
+                                            <h5>Simran Arora</h5>
+                        <p>Co-Founder, EduBridge<br>Amritsar, Punjab</p>
                                             <div class="rating">
-                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                                             </div>
                                         </div>
                                     </div>
@@ -1261,10 +1266,10 @@
                                     <p class="testimonial-text">"Our retail app now looks and feels identical across
                                         every device, and the CoxFuture team has been responsive at every stage."</p>
                                     <div class="testimonial-author">
-                                        <img src="../img/avater3.png" alt="Client photo">
+                                        <img src="../img/sagar.jpeg" alt="Client" loading="lazy">
                                         <div class="author-info">
-                                            <h5>Emma Whitfield</h5>
-                                            <p>Head of Digital, Retail Brand · Australia</p>
+                                            <h5>Mr. R.K. Sagar</h5>
+                        <p>Managing Director, GOTOGOPOST<br>Noida, Uttar Pradesh</p>
                                             <div class="rating">
                                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                                             </div>
@@ -1463,7 +1468,10 @@
         </div>
     </section>
 
+    </main>
+
     <!-- Footer -->
+
     <footer class="footer">
         <div class="container-fluid px-5">
             <div class="row g-2">
@@ -1554,9 +1562,10 @@
                             <li>
                                 <div class="d-flex align-items-center gap-3">
                                     <i class="fas fa-envelope"></i>
-                                    <a href="mailto:info@coxfuture.com">
-                                        info@coxfuture.com
-                                    </a>
+                                    <a href="mailto:info@coxfuture.com"
+   aria-label="Email info@coxfuture.com (opens your email app)">
+  info@coxfuture.com
+</a>
                                 </div>
                             </li>
 
@@ -1584,7 +1593,7 @@
             </div>
         </div>
     </footer>
-</main>
+ 
     <!-- Scroll to Top Button -->
     <button class="scroll-to-top" id="scrollTopBtn">
         <i class="fas fa-arrow-up"></i>

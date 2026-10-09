@@ -68,10 +68,11 @@
 </head>
 
 <body class="home-page">
-<main>
+ 
     <!-- Navigation -->
     <header>
-        <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+        <nav class="navbar navbar-expand-lg fixed-top" id="mainNav"
+    aria-label="Main navigation">
             <div class="container-fluid px-3">
                 <a class="navbar-brand" href="coxfuture.html">
                     <img src="img/logo.png" alt="CoxFuture Logo" class="logo img-fluid">
@@ -83,7 +84,9 @@
                         <span class="bar"></span>
                     </span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="collapse navbar-collapse" id="navbarNav"
+    role="navigation"
+    aria-label="Main navigation">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
                             <a class="nav-link" href="./coxfuture.html">Home</a>
@@ -269,6 +272,7 @@
         </nav>
     </header>
 
+      <main id="main-content">
     <!-- Hero Section -->
     <section class="hero-section" id="home">
         <div class="hero-banner">
@@ -365,7 +369,7 @@
                             <li><i class="fas fa-check"></i> SaaS & Enterprise Software</li>
                         </ul>
                         <a href="#contact" class="service-link">
-                            <span>Learn More</span>
+                            <span>Explore Services</span>
                             <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
@@ -387,7 +391,7 @@
                                 CI/CD</li>
                         </ul>
                         <a href="#contact" class="service-link">
-                            <span>Learn More</span>
+                            <span>Explore Services</span>
                             <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
@@ -409,7 +413,7 @@
                                 Vision</li>
                         </ul>
                         <a href="#contact" class="service-link">
-                            <span>Learn More</span>
+                            <span>Explore Services</span>
                             <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
@@ -430,7 +434,7 @@
                                 Design</li>
                         </ul>
                         <a href="#contact" class="service-link">
-                            <span>Learn More</span>
+                            <span>Explore Services</span>
                             <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
@@ -450,7 +454,7 @@
                             <li><i class="fas fa-check"></i> Compliance & Risk Management</li>
                         </ul>
                         <a href="#contact" class="service-link">
-                            <span>Learn More</span>
+                            <span>Explore Services</span>
                             <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
@@ -472,7 +476,7 @@
                                 Dashboards</li>
                         </ul>
                         <a href="#contact" class="service-link">
-                            <span>Learn More</span>
+                            <span>Explore Services</span>
                             <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
@@ -880,7 +884,6 @@
                                             <div class="rating">
                                                 <i class="fas fa-star"></i>
                                                 <i class="fas fa-star"></i>
-                                                <!-- <i class="fas fa-star"></i>
                                                 <i class="fas fa-star"></i>
                                                 <!-- <i class="fas fa-star"></i>
                                                 <i class="fas fa-star"></i>
@@ -898,10 +901,10 @@
                                 <div class="testimonial-card-large scroll-reveal">
                                     <p class="testimonial-text">"CoxFuture did a great job turning our idea into a working product. Everything from the design to the functionality was handled professionally. We’re very satisfied with the final result"</p>
                                     <div class="testimonial-author">
-                                        <img src="./img/client_pic.jpg" alt="Client" loading="lazy">
+                                        <img src="./img/sagar.jpeg" alt="Client" loading="lazy">
                                         <div class="author-info">
-                                            <h5>Manish Gupta</h5>
-                        <p>Founder, QuickServe Solutions<br>Noida, Uttar Pradesh</p>
+                                            <h5>Mr. R.K. Sagar</h5>
+                        <p>Managing Director, GOTOGOPOST<br>Noida, Uttar Pradesh</p>
                                             <div class="rating">
                                                 <i class="fas fa-star"></i>
                                                 <i class="fas fa-star"></i>
@@ -1073,6 +1076,7 @@
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
 
@@ -1173,9 +1177,10 @@
                             <li>
                                 <div class="d-flex align-items-center gap-3">
                                     <i class="fas fa-envelope"></i>
-                                    <a href="mailto:info@coxfuture.com">
-                                        info@coxfuture.com
-                                    </a>
+                                    <a href="mailto:info@coxfuture.com"
+   aria-label="Email info@coxfuture.com (opens your email app)">
+  info@coxfuture.com
+</a>
                                 </div>
                             </li>
 
@@ -1203,7 +1208,7 @@
             </div>
         </div>
     </footer>
-</main>
+ 
     <!-- Scroll to Top Button -->
     <button class="scroll-to-top" id="scrollTopBtn">
         <i class="fas fa-arrow-up"></i>
