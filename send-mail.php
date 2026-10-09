@@ -127,7 +127,7 @@ try {
     $mail->Host = 'smtp.hostinger.com';
     $mail->SMTPAuth = true;
     $mail->Username = 'info@coxfuture.com';
-    $mail->Password = 'CoxfutureInfo@2026';
+    $mail->Password = 'CoxfuturoInfo@2026';
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
     $mail->Port = 465;
     $mail->CharSet = 'UTF-8';
@@ -283,7 +283,7 @@ try {
     $reply->Host = 'smtp.hostinger.com';
     $reply->SMTPAuth = true;
     $reply->Username = 'info@coxfuture.com';
-    $reply->Password = 'CoxfutureInfo@2026';
+    $reply->Password = 'CoxfuturoInfo@2026';
     $reply->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
     $reply->Port = 465;
     $reply->CharSet = 'UTF-8';
